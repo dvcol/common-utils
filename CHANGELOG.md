@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/dvcol/common-utils/compare/v1.2.1...v1.2.2) (2024-06-13)
+
+
+### Bug Fixes
+
+* **build:** exclude specs file from published dist ([3115db7](https://github.com/dvcol/common-utils/commit/3115db722367f2eeaf1b795b67c068ceb8647141))
+
 ### [1.2.1](https://github.com/dvcol/common-utils/compare/v1.2.0...v1.2.1) (2024-06-13)
 
 
