@@ -1,21 +1,21 @@
 {
-  "name": "@dvcol/typescript-lib-template",
+  "name": "@dvcol/common-utils",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@9.1.0",
-  "description": "<description>",
-  "homepage": "https://github.com/dvcol/typescript-lib-template",
-  "bugs": "https://github.com/dvcol/typescript-lib-template/issues",
+  "packageManager": "pnpm@9.2.0",
+  "description": "Typescript library for common utility functions and constants\n\n",
+  "homepage": "https://github.com/dvcol/common-utils",
+  "bugs": "https://github.com/dvcol/common-utils/issues",
   "keywords": [
     "typescript",
     "library",
-    "typescript-lib-template"
+    "common-utils"
   ],
   "license": "MIT",
   "author": "dvcol",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dvcol/typescript-lib-template.git"
+    "url": "https://github.com/dvcol/common-utils.git"
   },
   "engines": {
     "node": ">=20",
@@ -29,6 +29,116 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./common": {
+      "require": "./dist/common/index.cjs",
+      "import": "./dist/common/index.js",
+      "types": "./dist/common/index.d.ts"
+    },
+    "./common/models": {
+      "require": "./dist/common/models/index.cjs",
+      "import": "./dist/common/models/index.js",
+      "types": "./dist/common/models/index.d.ts"
+    },
+    "./common/utils": {
+      "require": "./dist/common/utils/index.cjs",
+      "import": "./dist/common/utils/index.js",
+      "types": "./dist/common/utils/index.d.ts"
+    },
+    "./common/array": {
+      "require": "./dist/common/utils/array.utils.cjs",
+      "import": "./dist/common/utils/array.utils.js",
+      "types": "./dist/common/utils/array.utils.d.ts"
+    },
+    "./common/cache": {
+      "require": "./dist/common/utils/cache.utils.cjs",
+      "import": "./dist/common/utils/cache.utils.js",
+      "types": "./dist/common/utils/cache.utils.d.ts"
+    },
+    "./common/compare": {
+      "require": "./dist/common/utils/compare.utils.cjs",
+      "import": "./dist/common/utils/compare.utils.js",
+      "types": "./dist/common/utils/compare.utils.d.ts"
+    },
+    "./common/date": {
+      "require": "./dist/common/utils/date.utils.cjs",
+      "import": "./dist/common/utils/date.utils.js",
+      "types": "./dist/common/utils/date.utils.d.ts"
+    },
+    "./common/debounce": {
+      "require": "./dist/common/utils/debounce.utils.cjs",
+      "import": "./dist/common/utils/debounce.utils.js",
+      "types": "./dist/common/utils/debounce.utils.d.ts"
+    },
+    "./common/download": {
+      "require": "./dist/common/utils/download.utils.cjs",
+      "import": "./dist/common/utils/download.utils.js",
+      "types": "./dist/common/utils/download.utils.d.ts"
+    },
+    "./common/logger": {
+      "require": "./dist/common/utils/logger.utils.cjs",
+      "import": "./dist/common/utils/logger.utils.js",
+      "types": "./dist/common/utils/logger.utils.d.ts"
+    },
+    "./common/math": {
+      "require": "./dist/common/utils/math.utils.cjs",
+      "import": "./dist/common/utils/math.utils.js",
+      "types": "./dist/common/utils/math.utils.d.ts"
+    },
+    "./common/navigator": {
+      "require": "./dist/common/utils/navigator.utils.cjs",
+      "import": "./dist/common/utils/navigator.utils.js",
+      "types": "./dist/common/utils/navigator.utils.d.ts"
+    },
+    "./common/observable": {
+      "require": "./dist/common/utils/observable.utils.cjs",
+      "import": "./dist/common/utils/observable.utils.js",
+      "types": "./dist/common/utils/observable.utils.d.ts"
+    },
+    "./common/string": {
+      "require": "./dist/common/utils/string.utils.cjs",
+      "import": "./dist/common/utils/string.utils.js",
+      "types": "./dist/common/utils/string.utils.d.ts"
+    },
+    "./common/style": {
+      "require": "./dist/common/utils/style.utils.cjs",
+      "import": "./dist/common/utils/style.utils.js",
+      "types": "./dist/common/utils/style.utils.d.ts"
+    },
+    "./common/typescript": {
+      "require": "./dist/common/utils/typescript.utils.cjs",
+      "import": "./dist/common/utils/typescript.utils.js",
+      "types": "./dist/common/utils/typescript.utils.d.ts"
+    },
+    "./common/window": {
+      "require": "./dist/common/utils/window.utils.cjs",
+      "import": "./dist/common/utils/window.utils.js",
+      "types": "./dist/common/utils/window.utils.d.ts"
+    },
+    "./http": {
+      "require": "./dist/http/index.cjs",
+      "import": "./dist/http/index.js",
+      "types": "./dist/http/index.d.ts"
+    },
+    "./http/models": {
+      "require": "./dist/http/models/index.cjs",
+      "import": "./dist/http/models/index.js",
+      "types": "./dist/http/models/index.d.ts"
+    },
+    "./http/utils": {
+      "require": "./dist/http/utils/index.cjs",
+      "import": "./dist/http/utils/index.js",
+      "types": "./dist/http/utils/index.d.ts"
+    },
+    "./http/build-url": {
+      "require": "./dist/http/utils/build-url.utils.cjs",
+      "import": "./dist/http/utils/build-url.utils.js",
+      "types": "./dist/http/utils/build-url.utils.d.ts"
+    },
+    "./http/fetch": {
+      "require": "./dist/http/utils/fetch.utils.cjs",
+      "import": "./dist/http/utils/fetch.utils.js",
+      "types": "./dist/http/utils/fetch.utils.d.ts"
     }
   },
   "files": [
@@ -72,9 +182,9 @@
     "extract-changelog-release": "^1.0.2",
     "husky": "^9.0.11",
     "jsonc-eslint-parser": "^2.4.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.2",
     "standard-version": "^9.5.0",
-    "tsup": "^8.0.2",
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   }

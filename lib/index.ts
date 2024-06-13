@@ -1,1 +1,2 @@
-export const LIB_CONTENT = 'typescript-lib-template';
+export * from './common';
+export * from './http';
