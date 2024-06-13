@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/dvcol/common-utils/compare/v1.2.0...v1.2.1) (2024-06-13)
+
+
+### Bug Fixes
+
+* **http:** add missing export ([aced6d8](https://github.com/dvcol/common-utils/commit/aced6d8e0e5b7a02268f23d5fcbccb18821dac92))
+
 ## [1.2.0](https://github.com/dvcol/common-utils/compare/v1.1.0...v1.2.0) (2024-06-13)
 
 
