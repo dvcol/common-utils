@@ -80,4 +80,7 @@ export class ProxyLogger {
     if (!this._proxy?.error?.(this._logLevel)) return this.null;
     return this._logger.error.bind(this._logger);
   }
+
+  static logger = new ProxyLogger();
+  static time = getTimestamp;
 }
