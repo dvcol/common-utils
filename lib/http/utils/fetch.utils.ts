@@ -1,4 +1,4 @@
-export const getUUID = () => crypto.getRandomValues(new Uint32Array(4)).join('-');
+import { getUUID } from '~/common';
 
 /**
  * Represents a cancellable promise with a cancellation function.
