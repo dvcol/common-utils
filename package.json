@@ -1,7 +1,7 @@
 {
   "name": "@dvcol/common-utils",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "packageManager": "pnpm@9.2.0",
   "description": "Typescript library for common utility functions and constants\n\n",
   "homepage": "https://github.com/dvcol/common-utils",
