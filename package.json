@@ -95,6 +95,11 @@
       "import": "./dist/common/utils/observable.utils.js",
       "types": "./dist/common/utils/observable.utils.d.ts"
     },
+    "./common/save": {
+      "require": "./dist/common/utils/save.utils.cjs",
+      "import": "./dist/common/utils/save.utils.js",
+      "types": "./dist/common/utils/save.utils.d.ts"
+    },
     "./common/string": {
       "require": "./dist/common/utils/string.utils.cjs",
       "import": "./dist/common/utils/string.utils.js",
@@ -166,6 +171,7 @@
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@dvcol/eslint-plugin-presets": "^1.3.10",
+    "@types/wicg-file-system-access": "^2023.10.5",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "@vitest/coverage-v8": "^1.6.0",

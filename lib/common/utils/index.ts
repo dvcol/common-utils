@@ -8,6 +8,7 @@ export * from './logger.utils';
 export * from './math.utils';
 export * from './navigator.utils';
 export * from './observable.utils';
+export * from './save.utils';
 export * from './string.utils';
 export * from './style.utils';
 export * from './typescript.utils';
