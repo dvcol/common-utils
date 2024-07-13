@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/dvcol/common-utils/compare/v1.2.2...v1.3.0) (2024-07-13)
+
+
+### Features
+
+* **save:** adds file save utils (mostly chromium browsers) ([a6a3f93](https://github.com/dvcol/common-utils/commit/a6a3f9300f33df8ec401c5cc8bd1da7d75f7bb94))
+
 ### [1.2.2](https://github.com/dvcol/common-utils/compare/v1.2.1...v1.2.2) (2024-06-13)
 
 
