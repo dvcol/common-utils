@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/dvcol/common-utils/compare/v1.3.0...v1.4.0) (2024-07-17)
+
+
+### Features
+
+* **format:** add formatting utils ([a15eace](https://github.com/dvcol/common-utils/commit/a15eace5658dda342de130ea9975e48d30dd34d8))
+
 ## [1.3.0](https://github.com/dvcol/common-utils/compare/v1.2.2...v1.3.0) (2024-07-13)
 
 
