@@ -4,6 +4,7 @@ export * from './compare.utils';
 export * from './date.utils';
 export * from './debounce.utils';
 export * from './download.utils';
+export * from './format.utils';
 export * from './logger.utils';
 export * from './math.utils';
 export * from './navigator.utils';

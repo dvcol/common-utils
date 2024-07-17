@@ -75,6 +75,11 @@
       "import": "./dist/common/utils/download.utils.js",
       "types": "./dist/common/utils/download.utils.d.ts"
     },
+    "./common/format": {
+      "require": "./dist/common/utils/format.utils.cjs",
+      "import": "./dist/common/utils/format.utils.js",
+      "types": "./dist/common/utils/format.utils.d.ts"
+    },
     "./common/logger": {
       "require": "./dist/common/utils/logger.utils.cjs",
       "import": "./dist/common/utils/logger.utils.js",
@@ -166,7 +171,9 @@
     "access": "public"
   },
   "peerDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "pretty-bytes": "^6.1.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
