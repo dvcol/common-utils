@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/dvcol/common-utils/compare/v1.4.0...v1.5.0) (2024-07-22)
+
+
+### Features
+
+* **window:** adds isLightTheme utility function ([bc0f6fd](https://github.com/dvcol/common-utils/commit/bc0f6fd4b8e68915800de71dcfd785d4483b3f31))
+
 ## [1.4.0](https://github.com/dvcol/common-utils/compare/v1.3.0...v1.4.0) (2024-07-17)
 
 
