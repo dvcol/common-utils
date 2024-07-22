@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/dvcol/common-utils/compare/v1.5.0...v1.6.0) (2024-07-22)
+
+
+### Features
+
+* **window:** adds watch utility for theme modes ([899961b](https://github.com/dvcol/common-utils/commit/899961b15ffe07ef8e6e7c35a91267f6b5010dfb))
+
 ## [1.5.0](https://github.com/dvcol/common-utils/compare/v1.4.0...v1.5.0) (2024-07-22)
 
 
