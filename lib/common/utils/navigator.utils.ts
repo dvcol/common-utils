@@ -30,3 +30,5 @@ export const isMacOs = () => {
  * I.e. 'en' for 'en-US'.
  */
 export const getShortLocale: () => string = () => navigator?.language?.split('-').at(0) ?? 'en';
+
+export const getNavigatorVersion = () => /Chrome\/([0-9.]+)/.exec(navigator.userAgent).at(1);
