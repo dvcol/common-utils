@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/dvcol/common-utils/compare/v1.6.0...v1.7.0) (2024-08-04)
+
+
+### Features
+
+* **intl:** creates intl util ([e84f8d1](https://github.com/dvcol/common-utils/commit/e84f8d1ebd0ee22cbd4b15275fbd35cb4759a653))
+* **logger:** rework logger and add colorize options ([a6a6c42](https://github.com/dvcol/common-utils/commit/a6a6c427a0c88d6d56a88b87ae74d450619eaf21))
+* **navigator:** adds style & navigator utils ([5a1d3ef](https://github.com/dvcol/common-utils/commit/5a1d3ef9fd730d07e9a098fba015e8799460d3c2))
+* **promise:** create promise util ([2bb14e2](https://github.com/dvcol/common-utils/commit/2bb14e25af70ce5217fd7f0c7694b89182ae7c1b))
+
 ## [1.6.0](https://github.com/dvcol/common-utils/compare/v1.5.0...v1.6.0) (2024-07-22)
 
 
