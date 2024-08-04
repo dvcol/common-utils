@@ -100,6 +100,11 @@
       "import": "./dist/common/utils/observable.utils.js",
       "types": "./dist/common/utils/observable.utils.d.ts"
     },
+    "./common/promise": {
+      "require": "./dist/common/utils/promise.utils.cjs",
+      "import": "./dist/common/utils/promise.utils.js",
+      "types": "./dist/common/utils/promise.utils.d.ts"
+    },
     "./common/save": {
       "require": "./dist/common/utils/save.utils.cjs",
       "import": "./dist/common/utils/save.utils.js",
