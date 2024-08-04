@@ -80,6 +80,11 @@
       "import": "./dist/common/utils/format.utils.js",
       "types": "./dist/common/utils/format.utils.d.ts"
     },
+    "./common/intl": {
+      "require": "./dist/common/utils/intl.utils.cjs",
+      "import": "./dist/common/utils/intl.utils.js",
+      "types": "./dist/common/utils/intl.utils.d.ts"
+    },
     "./common/logger": {
       "require": "./dist/common/utils/logger.utils.cjs",
       "import": "./dist/common/utils/logger.utils.js",
