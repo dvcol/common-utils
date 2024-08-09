@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/dvcol/common-utils/compare/v1.7.0...v1.8.0) (2024-08-09)
+
+
+### Features
+
+* **date:** adds small day o the week date util ([663ec34](https://github.com/dvcol/common-utils/commit/663ec347f069c23ac50af49f446abb28fa557aad))
+
 ## [1.7.0](https://github.com/dvcol/common-utils/compare/v1.6.0...v1.7.0) (2024-08-04)
 
 
