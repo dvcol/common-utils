@@ -59,3 +59,38 @@ export const compareDateObject = <T extends RecursiveRecord<Date>>(a?: T, b?: T)
 
 export const shortTime = (date?: Date, locale?: Intl.LocalesArgument, options?: Intl.DateTimeFormatOptions) =>
   date?.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', ...options });
+
+export const DayOfWeek = {
+  Sunday: 'Sunday',
+  Monday: 'Monday',
+  Tuesday: 'Tuesday',
+  Wednesday: 'Wednesday',
+  Thursday: 'Thursday',
+  Friday: 'Friday',
+  Saturday: 'Saturday',
+} as const;
+
+export const DayOfWeekToNumber = {
+  [DayOfWeek.Sunday]: 0,
+  [DayOfWeek.Monday]: 1,
+  [DayOfWeek.Tuesday]: 2,
+  [DayOfWeek.Wednesday]: 3,
+  [DayOfWeek.Thursday]: 4,
+  [DayOfWeek.Friday]: 5,
+  [DayOfWeek.Saturday]: 6,
+} as const;
+
+export const NumberToDayOfWeek = {
+  0: DayOfWeek.Sunday,
+  1: DayOfWeek.Monday,
+  2: DayOfWeek.Tuesday,
+  3: DayOfWeek.Wednesday,
+  4: DayOfWeek.Thursday,
+  5: DayOfWeek.Friday,
+  6: DayOfWeek.Saturday,
+} as const;
+
+export const dayOfTheWeek = (date: Date | string | number) => {
+  const day = new Date(date).getDay();
+  return NumberToDayOfWeek[day];
+};
