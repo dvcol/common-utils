@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/dvcol/common-utils/compare/v1.8.0...v1.9.0) (2024-08-09)
+
+
+### Features
+
+* **date:** add a util to get today's date in local iso ([e2e5482](https://github.com/dvcol/common-utils/commit/e2e548231250bae6e3c7d9776c9ea2d5099758f3))
+
 ## [1.8.0](https://github.com/dvcol/common-utils/compare/v1.7.0...v1.8.0) (2024-08-09)
 
 
