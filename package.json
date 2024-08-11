@@ -60,6 +60,11 @@
       "import": "./dist/common/utils/compare.utils.js",
       "types": "./dist/common/utils/compare.utils.d.ts"
     },
+    "./common/crypto": {
+      "require": "./dist/common/utils/crypto.utils.cjs",
+      "import": "./dist/common/utils/crypto.utils.js",
+      "types": "./dist/common/utils/crypto.utils.d.ts"
+    },
     "./common/date": {
       "require": "./dist/common/utils/date.utils.cjs",
       "import": "./dist/common/utils/date.utils.js",

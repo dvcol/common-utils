@@ -1,6 +1,7 @@
 export * from './array.utils';
 export * from './cache.utils';
 export * from './compare.utils';
+export * from './crypto.utils';
 export * from './date.utils';
 export * from './debounce.utils';
 export * from './download.utils';
