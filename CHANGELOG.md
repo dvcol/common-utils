@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/dvcol/common-utils/compare/v1.9.0...v1.10.0) (2024-08-11)
+
+
+### Features
+
+* **crypto:** adds crypto utils ([a1ba4a2](https://github.com/dvcol/common-utils/commit/a1ba4a2e594741bec6fafaefc781c7228ef3190a))
+
 ## [1.9.0](https://github.com/dvcol/common-utils/compare/v1.8.0...v1.9.0) (2024-08-09)
 
 
