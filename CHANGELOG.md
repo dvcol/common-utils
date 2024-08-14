@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.1](https://github.com/dvcol/common-utils/compare/v1.11.0...v1.11.1) (2024-08-14)
+
+
+### Bug Fixes
+
+* **format:** adds a days only option to avoid approximation ([e96f414](https://github.com/dvcol/common-utils/commit/e96f414500aaaf156f8bc2df8f0c50b360a0dd1b))
+
 ## [1.11.0](https://github.com/dvcol/common-utils/compare/v1.10.0...v1.11.0) (2024-08-14)
 
 
