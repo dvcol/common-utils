@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/dvcol/common-utils/compare/v1.10.0...v1.11.0) (2024-08-14)
+
+
+### Features
+
+* **format:** adds support to year-month-date in time formatting ([e4f1b77](https://github.com/dvcol/common-utils/commit/e4f1b776f16bee2e81e11c266e7b105bee059305))
+
 ## [1.10.0](https://github.com/dvcol/common-utils/compare/v1.9.0...v1.10.0) (2024-08-11)
 
 
