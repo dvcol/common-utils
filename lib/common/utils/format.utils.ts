@@ -41,6 +41,9 @@ export const formatTimeLong = ({ years, months, days, hours, minutes, seconds }:
   return parts.join(' ');
 };
 
+/**
+ * Note: Months are approximated to 365/12 days and years to 365 days, which may not be accurate.
+ */
 export const InSeconds = {
   minute: 60,
   hour: 60 * 60,
@@ -52,12 +55,23 @@ export const InSeconds = {
 
 export const formatHMS = (s: number): Time => {
   const hours = Math.floor(s / InSeconds.hour);
-  const minutes = Math.floor((s % InSeconds.minute) / InSeconds.minute);
+  const minutes = Math.floor((s % InSeconds.hour) / InSeconds.minute);
   const seconds = s % InSeconds.minute;
 
   return { years: 0, months: 0, days: 0, hours, minutes, seconds };
 };
 
+export const formatDHMS = (s: number): Time => {
+  const days = Math.floor(s / InSeconds.day);
+  return { ...formatHMS(s % InSeconds.day), days };
+};
+
+/**
+ * Format time in seconds to human readable format.
+ * Note: Months are approximated to 365/12 days and years to 365 days, which may not be accurate.
+ *
+ * @param s - Time in seconds
+ */
 export const formatYMD = (s: number): Time => {
   let remaining = 0;
   const years = Math.floor(s / InSeconds.year);
@@ -65,16 +79,26 @@ export const formatYMD = (s: number): Time => {
 
   const months = Math.floor(remaining / InSeconds.month);
   remaining %= InSeconds.month;
-
-  const days = Math.floor(remaining / InSeconds.day);
-  remaining %= InSeconds.day;
-
-  return { ...formatHMS(remaining), years, months, days };
+  return { ...formatDHMS(remaining), years, months };
 };
 
-export const formatTime = (s: number, format: 'short' | 'long' | 'ymd' | 'raw' = 'short'): Time | string => {
+/**
+ * Format time in seconds to human readable format.
+ * Note: Months are approximated to 365/12 days and years to 365 days, which may not be accurate.
+ *
+ *  - short: 00:00:00
+ *  - long: 0h 0m 0s
+ *  - days: 0d 0h 0m 0s
+ *  - ymd: 0y 0m 0d 0h 0m 0s
+ *  - raw: { years, months, days, hours, minutes, seconds }
+ *
+ * @param s - Time in seconds
+ * @param format - Format to use
+ */
+export const formatTime = (s: number, format: 'short' | 'long' | 'ymd' | 'days' | 'raw' = 'short'): Time | string => {
   if (format === 'short') return formatTimeShort(formatHMS(s));
   if (format === 'long') return formatTimeLong(formatHMS(s));
+  if (format === 'days') return formatTimeLong(formatDHMS(s));
   if (format === 'ymd') return formatTimeLong(formatYMD(s));
   return formatYMD(s);
 };
