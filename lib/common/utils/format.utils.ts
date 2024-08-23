@@ -56,7 +56,7 @@ export const InSeconds = {
 export const formatHMS = (s: number): Time => {
   const hours = Math.floor(s / InSeconds.hour);
   const minutes = Math.floor((s % InSeconds.hour) / InSeconds.minute);
-  const seconds = s % InSeconds.minute;
+  const seconds = Math.floor(s % InSeconds.minute);
 
   return { years: 0, months: 0, days: 0, hours, minutes, seconds };
 };
