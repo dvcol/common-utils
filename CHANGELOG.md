@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.2](https://github.com/dvcol/common-utils/compare/v1.11.1...v1.11.2) (2024-08-23)
+
+
+### Bug Fixes
+
+* **format:** round seconds to integers ([913b003](https://github.com/dvcol/common-utils/commit/913b003e5f26a668f65278f21b23d08e2aa109d6))
+
 ### [1.11.1](https://github.com/dvcol/common-utils/compare/v1.11.0...v1.11.1) (2024-08-14)
 
 
