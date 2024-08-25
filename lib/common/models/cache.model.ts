@@ -2,6 +2,7 @@ export type CacheStoreEntity<V = unknown, T = string> = {
   key: string;
   value: V;
   type?: T;
+  evictAt?: number;
   cachedAt: number;
   accessedAt?: number;
 };
