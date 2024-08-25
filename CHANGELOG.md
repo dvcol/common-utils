@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/dvcol/common-utils/compare/v1.11.2...v1.12.0) (2024-08-25)
+
+
+### Features
+
+* **cache:** adds optional eviction date in cache store entity ([18da2a5](https://github.com/dvcol/common-utils/commit/18da2a57668dd8111db5e72933eb46d34520d4c7))
+
 ### [1.11.2](https://github.com/dvcol/common-utils/compare/v1.11.1...v1.11.2) (2024-08-23)
 
 
