@@ -1,3 +1,5 @@
+import type { SyncOrAsync } from '~/common';
+
 export type CacheStoreEntity<V = unknown, T = string> = {
   key: string;
   value: V;
@@ -8,13 +10,13 @@ export type CacheStoreEntity<V = unknown, T = string> = {
 };
 
 export type CacheStore<V = unknown, T = string> = {
-  get(key: string): CacheStoreEntity<V, T> | Promise<CacheStoreEntity<V, T>> | undefined;
-  set(key: string, value: CacheStoreEntity<V, T>): CacheStore<V, T> | Promise<CacheStore<V, T>>;
-  delete(key: string): boolean | Promise<boolean>;
-  clear(regex?: string): void | Promise<void>;
-  entries?(): IterableIterator<[string, CacheStoreEntity<V, T>]>;
-  values?(): IterableIterator<CacheStoreEntity<V, T>>;
-  keys?(): IterableIterator<string>;
+  get(key: string): SyncOrAsync<CacheStoreEntity<V, T> | undefined>;
+  set(key: string, value: CacheStoreEntity<V, T>): SyncOrAsync<CacheStore<V, T>>;
+  delete(key: string): SyncOrAsync<boolean>;
+  clear(regex?: string): SyncOrAsync<void>;
+  entries?(): SyncOrAsync<IterableIterator<[string, CacheStoreEntity<V, T>]>>;
+  values?(): SyncOrAsync<IterableIterator<CacheStoreEntity<V, T>>>;
+  keys?(): SyncOrAsync<IterableIterator<string>>;
   /** the duration in milliseconds after which the cache will be cleared */
   retention?: number;
   /** if true, the cache will be deleted if an error occurs */
