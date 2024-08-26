@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/dvcol/common-utils/compare/v1.12.0...v1.13.0) (2024-08-26)
+
+
+### Features
+
+* **cache:** adds additional methods to cache store ([c760c6e](https://github.com/dvcol/common-utils/commit/c760c6e526a8f741d94254bb128f1cd08183acac))
+
 ## [1.12.0](https://github.com/dvcol/common-utils/compare/v1.11.2...v1.12.0) (2024-08-25)
 
 
