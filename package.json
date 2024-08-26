@@ -172,7 +172,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "build": "tsup",
     "watch": "npm run build -- --watch lib",
     "lint": "eslint lib",
