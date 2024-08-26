@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.1](https://github.com/dvcol/common-utils/compare/v1.14.0...v1.14.1) (2024-08-26)
+
+
+### Bug Fixes
+
+* **cache:** fix type error in cache store model ([5b889e6](https://github.com/dvcol/common-utils/commit/5b889e6350c5a5aa5ac25e30bbb51ea08bc25df6))
+
 ## [1.14.0](https://github.com/dvcol/common-utils/compare/v1.13.1...v1.14.0) (2024-08-26)
 
 
