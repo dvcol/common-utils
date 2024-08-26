@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.13.1](https://github.com/dvcol/common-utils/compare/v1.13.0...v1.13.1) (2024-08-26)
+
+
+### Bug Fixes
+
+* **cache:** makes values, keys and entries allow Promise ([f773c03](https://github.com/dvcol/common-utils/commit/f773c038e37647d212e4a52a39bf3389be405009))
+
 ## [1.13.0](https://github.com/dvcol/common-utils/compare/v1.12.0...v1.13.0) (2024-08-26)
 
 
