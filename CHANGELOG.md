@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/dvcol/common-utils/compare/v1.13.1...v1.14.0) (2024-08-26)
+
+
+### Features
+
+* **cache:** adds access and retention logging toggles ([8d89d00](https://github.com/dvcol/common-utils/commit/8d89d002c34a8674b97406a5fd14792ecd36505e))
+
 ### [1.13.1](https://github.com/dvcol/common-utils/compare/v1.13.0...v1.13.1) (2024-08-26)
 
 
