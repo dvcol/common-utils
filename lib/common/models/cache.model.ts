@@ -24,5 +24,5 @@ export type CacheStore<V = unknown, T = string> = {
   /** if true, the access time will be updated on every access */
   saveAccess?: boolean;
   /** if true, the eviction date will be persisted on cache write */
-  saveRetention?: number;
+  saveRetention?: boolean;
 };
