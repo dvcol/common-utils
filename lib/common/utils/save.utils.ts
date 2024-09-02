@@ -1,5 +1,19 @@
 import type { RecursiveRecord } from '~/common';
 
+export interface FilePickerOptions {
+  types?: FilePickerAcceptType[] | undefined;
+  /**
+   * @default false
+   */
+  excludeAcceptAllOption?: boolean | undefined;
+  startIn?: WellKnownDirectory | FileSystemHandle | undefined;
+  id?: string | undefined;
+}
+
+export interface SaveFilePickerOptions extends FilePickerOptions {
+  suggestedName?: string | undefined;
+}
+
 export const defaultFileHandlerOptions: SaveFilePickerOptions = {
   startIn: 'downloads',
   types: [
