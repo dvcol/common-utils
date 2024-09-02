@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.2](https://github.com/dvcol/common-utils/compare/v1.14.1...v1.14.2) (2024-09-02)
+
+
+### Bug Fixes
+
+* **types:** export SaveFilePickerOptions ([16f8223](https://github.com/dvcol/common-utils/commit/16f8223c533f43e547e9618c268255f082f064c2))
+
 ### [1.14.1](https://github.com/dvcol/common-utils/compare/v1.14.0...v1.14.1) (2024-08-26)
 
 
