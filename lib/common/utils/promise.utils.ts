@@ -9,13 +9,13 @@ export const wait = (ms?: number) =>
  * @param promises - An array of promises to race
  * @param cb - A callback that receives the resolved value and returns a boolean (default: r => r !== undefined)
  */
-export async function raceUntil<T = unknown>(
+export function raceUntil<T = unknown>(
   promises: Promise<T>[],
   cb = (r: T) => r !== undefined,
-): Promise<{
+): {
   inner: Promise<void | T[]>;
   outer: Promise<T | null>;
-}> {
+} {
   const { promise: outer, resolve, reject } = Promise.withResolvers<T>();
 
   const _promises = promises.map(p =>

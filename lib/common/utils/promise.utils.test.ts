@@ -46,42 +46,42 @@ describe('promise.utils.ts', () => {
 
     it('should race promises until a condition returns a value', async () => {
       expect.assertions(2);
-      const { inner, outer } = await raceUntil([pFalseValue(), pTrueValue(), pTruthyValue(), pFalsyValue()]);
+      const { inner, outer } = raceUntil([pFalseValue(), pTrueValue(), pTruthyValue(), pFalsyValue()]);
       await expect(outer).resolves.toBe(falseValue);
       await expect(inner).resolves.toStrictEqual([falseValue, trueValue, truthyValue, falsyValue]);
     });
 
     it('should race promises until a condition returns null', async () => {
       expect.assertions(2);
-      const { inner, outer } = await raceUntil([pTrueValue(), pTruthyValue(), pFalsyValue(), pNullValue(), pUndefinedValue()]);
+      const { inner, outer } = raceUntil([pTrueValue(), pTruthyValue(), pFalsyValue(), pNullValue(), pUndefinedValue()]);
       await expect(outer).resolves.toBeNull();
       await expect(inner).resolves.toStrictEqual([trueValue, truthyValue, falsyValue, null, undefined]);
     });
 
     it('should race promises until a condition returns a value with a custom condition', async () => {
       expect.assertions(2);
-      const { inner, outer } = await raceUntil([pFalseValue(), pTrueValue(), pTruthyValue(), pFalsyValue()], r => typeof r === 'string');
+      const { inner, outer } = raceUntil([pFalseValue(), pTrueValue(), pTruthyValue(), pFalsyValue()], r => typeof r === 'string');
       await expect(outer).resolves.toBe(truthyValue);
       await expect(inner).resolves.toStrictEqual([falseValue, trueValue, truthyValue, falsyValue]);
     });
 
     it('should race promises and resolve with null if no condition returns a value', async () => {
       expect.assertions(2);
-      const { inner, outer } = await raceUntil([pFalseValue(), pFalsyValue(), pTruthyValue()], r => r === trueValue);
+      const { inner, outer } = raceUntil([pFalseValue(), pFalsyValue(), pTruthyValue()], r => r === trueValue);
       await expect(outer).resolves.toBeNull();
       await expect(inner).resolves.toStrictEqual([falseValue, falsyValue, truthyValue]);
     });
 
     it('should reject if any promise rejects', async () => {
       expect.assertions(2);
-      const { inner, outer } = await raceUntil([pEarlyReject(), pTrueValue(), pTruthyValue(), pLateReject()]);
+      const { inner, outer } = raceUntil([pEarlyReject(), pTrueValue(), pTruthyValue(), pLateReject()]);
       expect(outer).rejects.toThrow(earlyError);
       expect(inner).resolves.toBeUndefined();
     });
 
     it('should return outer value if inner promise resolves before outer rejects', async () => {
       expect.assertions(2);
-      const { inner, outer } = await raceUntil([pTrueValue(), pLateReject(), pTruthyValue()]);
+      const { inner, outer } = raceUntil([pTrueValue(), pLateReject(), pTruthyValue()]);
       expect(outer).resolves.toBe(trueValue);
       expect(inner).resolves.toBeUndefined();
     });
