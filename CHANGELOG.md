@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/dvcol/common-utils/compare/v1.14.2...v1.15.0) (2024-09-16)
+
+
+### Features
+
+* **promise:** adds raceUntil function ([60bc22e](https://github.com/dvcol/common-utils/commit/60bc22e94e6f95994f6f579661a365a65a19a4e7))
+
 ### [1.14.2](https://github.com/dvcol/common-utils/compare/v1.14.1...v1.14.2) (2024-09-02)
 
 
