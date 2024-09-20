@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://github.com/dvcol/common-utils/compare/v1.15.1...v1.16.0) (2024-09-20)
+
+
+### Features
+
+* **utils:** adds object, touch and string utils ([0b081c4](https://github.com/dvcol/common-utils/commit/0b081c485adb2d04516cd2eed12a186126c13de2))
+
 ### [1.15.1](https://github.com/dvcol/common-utils/compare/v1.15.0...v1.15.1) (2024-09-16)
 
 
