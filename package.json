@@ -26,144 +26,155 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "require.types": "./dist/index.d.cts",
+      "import.types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.js"
     },
     "./common": {
+      "types": "./dist/common/index.d.ts",
       "require": "./dist/common/index.cjs",
-      "import": "./dist/common/index.js",
-      "types": "./dist/common/index.d.ts"
+      "import": "./dist/common/index.js"
     },
     "./common/models": {
+      "types": "./dist/common/models/index.d.ts",
       "require": "./dist/common/models/index.cjs",
-      "import": "./dist/common/models/index.js",
-      "types": "./dist/common/models/index.d.ts"
+      "import": "./dist/common/models/index.js"
     },
     "./common/utils": {
+      "types": "./dist/common/utils/index.d.ts",
       "require": "./dist/common/utils/index.cjs",
-      "import": "./dist/common/utils/index.js",
-      "types": "./dist/common/utils/index.d.ts"
+      "import": "./dist/common/utils/index.js"
     },
     "./common/array": {
+      "types": "./dist/common/utils/array.utils.d.ts",
       "require": "./dist/common/utils/array.utils.cjs",
-      "import": "./dist/common/utils/array.utils.js",
-      "types": "./dist/common/utils/array.utils.d.ts"
+      "import": "./dist/common/utils/array.utils.js"
     },
     "./common/cache": {
+      "types": "./dist/common/utils/cache.utils.d.ts",
       "require": "./dist/common/utils/cache.utils.cjs",
-      "import": "./dist/common/utils/cache.utils.js",
-      "types": "./dist/common/utils/cache.utils.d.ts"
+      "import": "./dist/common/utils/cache.utils.js"
     },
     "./common/compare": {
+      "types": "./dist/common/utils/compare.utils.d.ts",
       "require": "./dist/common/utils/compare.utils.cjs",
-      "import": "./dist/common/utils/compare.utils.js",
-      "types": "./dist/common/utils/compare.utils.d.ts"
+      "import": "./dist/common/utils/compare.utils.js"
     },
     "./common/crypto": {
+      "types": "./dist/common/utils/crypto.utils.d.ts",
       "require": "./dist/common/utils/crypto.utils.cjs",
-      "import": "./dist/common/utils/crypto.utils.js",
-      "types": "./dist/common/utils/crypto.utils.d.ts"
+      "import": "./dist/common/utils/crypto.utils.js"
     },
     "./common/date": {
+      "types": "./dist/common/utils/date.utils.d.ts",
       "require": "./dist/common/utils/date.utils.cjs",
-      "import": "./dist/common/utils/date.utils.js",
-      "types": "./dist/common/utils/date.utils.d.ts"
+      "import": "./dist/common/utils/date.utils.js"
     },
     "./common/debounce": {
+      "types": "./dist/common/utils/debounce.utils.d.ts",
       "require": "./dist/common/utils/debounce.utils.cjs",
-      "import": "./dist/common/utils/debounce.utils.js",
-      "types": "./dist/common/utils/debounce.utils.d.ts"
+      "import": "./dist/common/utils/debounce.utils.js"
     },
     "./common/download": {
+      "types": "./dist/common/utils/download.utils.d.ts",
       "require": "./dist/common/utils/download.utils.cjs",
-      "import": "./dist/common/utils/download.utils.js",
-      "types": "./dist/common/utils/download.utils.d.ts"
+      "import": "./dist/common/utils/download.utils.js"
     },
     "./common/format": {
+      "types": "./dist/common/utils/format.utils.d.ts",
       "require": "./dist/common/utils/format.utils.cjs",
-      "import": "./dist/common/utils/format.utils.js",
-      "types": "./dist/common/utils/format.utils.d.ts"
+      "import": "./dist/common/utils/format.utils.js"
     },
     "./common/intl": {
+      "types": "./dist/common/utils/intl.utils.d.ts",
       "require": "./dist/common/utils/intl.utils.cjs",
-      "import": "./dist/common/utils/intl.utils.js",
-      "types": "./dist/common/utils/intl.utils.d.ts"
+      "import": "./dist/common/utils/intl.utils.js"
     },
     "./common/logger": {
+      "types": "./dist/common/utils/logger.utils.d.ts",
       "require": "./dist/common/utils/logger.utils.cjs",
-      "import": "./dist/common/utils/logger.utils.js",
-      "types": "./dist/common/utils/logger.utils.d.ts"
+      "import": "./dist/common/utils/logger.utils.js"
     },
     "./common/math": {
+      "types": "./dist/common/utils/math.utils.d.ts",
       "require": "./dist/common/utils/math.utils.cjs",
-      "import": "./dist/common/utils/math.utils.js",
-      "types": "./dist/common/utils/math.utils.d.ts"
+      "import": "./dist/common/utils/math.utils.js"
     },
     "./common/navigator": {
+      "types": "./dist/common/utils/navigator.utils.d.ts",
       "require": "./dist/common/utils/navigator.utils.cjs",
-      "import": "./dist/common/utils/navigator.utils.js",
-      "types": "./dist/common/utils/navigator.utils.d.ts"
+      "import": "./dist/common/utils/navigator.utils.js"
+    },
+    "./common/object": {
+      "types": "./dist/common/utils/object.utils.d.ts",
+      "require": "./dist/common/utils/object.utils.cjs",
+      "import": "./dist/common/utils/object.utils.js"
     },
     "./common/observable": {
+      "types": "./dist/common/utils/observable.utils.d.ts",
       "require": "./dist/common/utils/observable.utils.cjs",
-      "import": "./dist/common/utils/observable.utils.js",
-      "types": "./dist/common/utils/observable.utils.d.ts"
+      "import": "./dist/common/utils/observable.utils.js"
     },
     "./common/promise": {
+      "types": "./dist/common/utils/promise.utils.d.ts",
       "require": "./dist/common/utils/promise.utils.cjs",
-      "import": "./dist/common/utils/promise.utils.js",
-      "types": "./dist/common/utils/promise.utils.d.ts"
+      "import": "./dist/common/utils/promise.utils.js"
     },
     "./common/save": {
+      "types": "./dist/common/utils/save.utils.d.ts",
       "require": "./dist/common/utils/save.utils.cjs",
-      "import": "./dist/common/utils/save.utils.js",
-      "types": "./dist/common/utils/save.utils.d.ts"
+      "import": "./dist/common/utils/save.utils.js"
     },
     "./common/string": {
+      "types": "./dist/common/utils/string.utils.d.ts",
       "require": "./dist/common/utils/string.utils.cjs",
-      "import": "./dist/common/utils/string.utils.js",
-      "types": "./dist/common/utils/string.utils.d.ts"
+      "import": "./dist/common/utils/string.utils.js"
     },
     "./common/style": {
+      "types": "./dist/common/utils/style.utils.d.ts",
       "require": "./dist/common/utils/style.utils.cjs",
-      "import": "./dist/common/utils/style.utils.js",
-      "types": "./dist/common/utils/style.utils.d.ts"
+      "import": "./dist/common/utils/style.utils.js"
+    },
+    "./common/touch": {
+      "types": "./dist/common/utils/touch.utils.d.ts",
+      "require": "./dist/common/utils/touch.utils.cjs",
+      "import": "./dist/common/utils/touch.utils.js"
     },
     "./common/typescript": {
+      "types": "./dist/common/utils/typescript.utils.d.ts",
       "require": "./dist/common/utils/typescript.utils.cjs",
-      "import": "./dist/common/utils/typescript.utils.js",
-      "types": "./dist/common/utils/typescript.utils.d.ts"
+      "import": "./dist/common/utils/typescript.utils.js"
     },
     "./common/window": {
+      "types": "./dist/common/utils/window.utils.d.ts",
       "require": "./dist/common/utils/window.utils.cjs",
-      "import": "./dist/common/utils/window.utils.js",
-      "types": "./dist/common/utils/window.utils.d.ts"
+      "import": "./dist/common/utils/window.utils.js"
     },
     "./http": {
+      "types": "./dist/http/index.d.ts",
       "require": "./dist/http/index.cjs",
-      "import": "./dist/http/index.js",
-      "types": "./dist/http/index.d.ts"
+      "import": "./dist/http/index.js"
     },
     "./http/models": {
+      "types": "./dist/http/models/index.d.ts",
       "require": "./dist/http/models/index.cjs",
-      "import": "./dist/http/models/index.js",
-      "types": "./dist/http/models/index.d.ts"
+      "import": "./dist/http/models/index.js"
     },
     "./http/utils": {
+      "types": "./dist/http/utils/index.d.ts",
       "require": "./dist/http/utils/index.cjs",
-      "import": "./dist/http/utils/index.js",
-      "types": "./dist/http/utils/index.d.ts"
+      "import": "./dist/http/utils/index.js"
     },
     "./http/build-url": {
+      "types": "./dist/http/utils/build-url.utils.d.ts",
       "require": "./dist/http/utils/build-url.utils.cjs",
-      "import": "./dist/http/utils/build-url.utils.js",
-      "types": "./dist/http/utils/build-url.utils.d.ts"
+      "import": "./dist/http/utils/build-url.utils.js"
     },
     "./http/fetch": {
+      "types": "./dist/http/utils/fetch.utils.d.ts",
       "require": "./dist/http/utils/fetch.utils.cjs",
-      "import": "./dist/http/utils/fetch.utils.js",
-      "types": "./dist/http/utils/fetch.utils.d.ts"
+      "import": "./dist/http/utils/fetch.utils.js"
     }
   },
   "files": [
@@ -173,7 +184,7 @@
   ],
   "scripts": {
     "prepare": "husky",
-    "build": "tsup",
+    "build": "tsup && publint",
     "watch": "npm run build -- --watch lib",
     "lint": "eslint lib",
     "lint:fix": "eslint lib --fix",
@@ -211,6 +222,7 @@
     "husky": "^9.0.11",
     "jsonc-eslint-parser": "^2.4.0",
     "prettier": "^3.3.2",
+    "publint": "^0.2.11",
     "standard-version": "^9.5.0",
     "tsup": "^8.1.0",
     "typescript": "^5.4.5",
