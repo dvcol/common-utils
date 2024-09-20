@@ -1,3 +1,5 @@
+import { ParsingRelativePathError } from '~/common/models/error.model';
+
 /**
  * Parse string to JSON
  * @param json
@@ -76,3 +78,29 @@ export const deCapitalise = (input?: string) => {
 };
 
 export const getUUID = () => crypto.getRandomValues(new Uint32Array(4)).join('-');
+
+export const toPathSegment = (str?: string, trailing = false): string => {
+  let _str = str?.trim();
+  if (!_str?.length) return '';
+  if (!_str.startsWith('/')) _str = `/${_str}`;
+  if (trailing && !_str.endsWith('/')) _str = `${_str}/`;
+  if (!trailing && _str.endsWith('/')) _str = _str.slice(0, -1);
+  return _str;
+};
+
+export const computeAbsolutePath = (parent: string, relative: string) => {
+  const relativeSegments = relative.split('/').filter(Boolean);
+  const parentSegments = parent.split('/').filter(Boolean);
+  relativeSegments.forEach(segment => {
+    if (segment === '..' && parentSegments.length < 1) throw new ParsingRelativePathError({ parent, relative });
+    else if (segment === '..') parentSegments.pop();
+    else if (segment !== '.') parentSegments.push(segment);
+  });
+  return `/${parentSegments.join('/')}`;
+};
+
+export const toSnakeCase = (str: string) =>
+  str
+    .replace(/([A-Z])/g, '_$1')
+    .toLowerCase()
+    .slice(1);
