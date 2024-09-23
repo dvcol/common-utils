@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.17.0](https://github.com/dvcol/common-utils/compare/v1.16.1...v1.17.0) (2024-09-23)
+
+
+### Features
+
+* **object:** adds shallow equal utility ([99d6459](https://github.com/dvcol/common-utils/commit/99d6459c10ec0d3db63cc282524bedc69b726b29))
+
 ### [1.16.1](https://github.com/dvcol/common-utils/compare/v1.16.0...v1.16.1) (2024-09-20)
 
 
