@@ -23,7 +23,7 @@ export function shallowClone<T, O extends keyof T | string | number | symbol = k
 }
 
 export const isShallowEqual = <T extends Record<string | number | symbol, any>>(a?: T, b?: T, depth = 1): boolean => {
-  if (depth <= 0) return true;
+  if (depth <= 0) return a === b;
   if (a === b) return true;
   if (typeof a !== 'object' || typeof b !== 'object') return a === b;
   if (a instanceof URL && b instanceof URL) return a.href === b.href;
