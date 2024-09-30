@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.17.1](https://github.com/dvcol/common-utils/compare/v1.17.0...v1.17.1) (2024-09-30)
+
+
+### Bug Fixes
+
+* **object:** return eqeq when depth is <= 0 ([2fd110e](https://github.com/dvcol/common-utils/commit/2fd110e81c9de2d8d5fb5411672d16c41236ebaf))
+
 ## [1.17.0](https://github.com/dvcol/common-utils/compare/v1.16.1...v1.17.0) (2024-09-23)
 
 
