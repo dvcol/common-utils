@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.17.2](https://github.com/dvcol/common-utils/compare/v1.17.1...v1.17.2) (2024-10-05)
+
+
+### Bug Fixes
+
+* **logger:** adds missing silent enum log level ([1f6477e](https://github.com/dvcol/common-utils/commit/1f6477e7e2de6c5c1a9859a1829ed0c4f91ec8b9))
+* **logger:** adds trace as log level ([347f2cc](https://github.com/dvcol/common-utils/commit/347f2cc6ea68cd5bdf43f5ac3fbf08abaec28d27))
+
 ### [1.17.1](https://github.com/dvcol/common-utils/compare/v1.17.0...v1.17.1) (2024-09-30)
 
 
