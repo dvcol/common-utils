@@ -1,8 +1,9 @@
 export enum LogLevel {
-  Error,
-  Warn,
-  Info,
-  Debug,
+  Silent = -1,
+  Error = 0,
+  Warn = 1,
+  Info = 2,
+  Debug = 3,
 }
 
 export const TimeStampFormat = {
