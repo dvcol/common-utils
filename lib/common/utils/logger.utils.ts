@@ -4,7 +4,17 @@ export enum LogLevel {
   Warn = 1,
   Info = 2,
   Debug = 3,
+  Trace = 4,
 }
+
+/**
+ * Convert a string log level to LogLevel enum
+ * @param logLevel the log level string
+ */
+export const toLogLevel = (logLevel: keyof typeof LogLevel | 'silent' | 'error' | 'warn' | 'info' | 'debug') => {
+  const _logLevel = logLevel.charAt(0).toUpperCase() + logLevel.slice(1).toLowerCase();
+  return LogLevel[_logLevel];
+};
 
 export const TimeStampFormat = {
   ISO: 'ISO',
@@ -101,7 +111,7 @@ export const colorize = <T extends unknown[]>(color: string, ...args: T): Parame
 export type ProxyLoggerFilter = Partial<Record<keyof Console, (logLevel: LogLevel, ...args: unknown[]) => boolean>>;
 
 export const proxyLoggerFilter: ProxyLoggerFilter = {
-  trace: (logLevel: LogLevel) => logLevel >= LogLevel.Debug,
+  trace: (logLevel: LogLevel) => logLevel >= LogLevel.Trace,
   debug: (logLevel: LogLevel) => logLevel >= LogLevel.Debug,
   info: (logLevel: LogLevel) => logLevel >= LogLevel.Info,
   warn: (logLevel: LogLevel) => logLevel >= LogLevel.Warn,
