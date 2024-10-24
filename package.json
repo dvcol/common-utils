@@ -56,6 +56,11 @@
       "require": "./dist/common/utils/cache.utils.cjs",
       "import": "./dist/common/utils/cache.utils.js"
     },
+    "./common/color": {
+      "types": "./dist/common/utils/color.utils.d.ts",
+      "require": "./dist/common/utils/color.utils.cjs",
+      "import": "./dist/common/utils/color.utils.js"
+    },
     "./common/compare": {
       "types": "./dist/common/utils/compare.utils.d.ts",
       "require": "./dist/common/utils/compare.utils.cjs",
