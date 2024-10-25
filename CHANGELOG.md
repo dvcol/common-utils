@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.18.1](https://github.com/dvcol/common-utils/compare/v1.18.0...v1.18.1) (2024-10-25)
+
+
+### Bug Fixes
+
+* **debounce:** reject promise on error ([5e3e4f7](https://github.com/dvcol/common-utils/commit/5e3e4f7c1816ba192e5a11433aafb78e1aabe915))
+
 ## [1.18.0](https://github.com/dvcol/common-utils/compare/v1.17.2...v1.18.0) (2024-10-24)
 
 
