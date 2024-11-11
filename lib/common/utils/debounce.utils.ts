@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- generic type
+// es lint-disable-next-line @typescript-eslint/no-explicit-any -- generic type
 type AnyFunction<T> = (...args: any[]) => Promise<T> | T;
 type Timeout = ReturnType<typeof setTimeout>;
 
@@ -12,18 +12,26 @@ export function debounce<T>(
   timout: Ref<Timeout | undefined> = { value: undefined },
 ): (...args: Parameters<typeof func>) => Promise<T> {
   const timeoutId = timout;
+  let resolves: ((value: T) => void)[] = [];
+  let rejects: ((error: unknown) => void)[] = [];
 
   return async (...args: Parameters<typeof func>[]): Promise<T> => {
-    return new Promise((resolve, reject) => {
-      if (timeoutId.value) clearTimeout(timeoutId.value);
+    if (timeoutId.value) clearTimeout(timeoutId.value);
+    const { resolve, reject, promise } = Promise.withResolvers<T>();
+    resolves.push(resolve);
+    rejects.push(reject);
 
-      timeoutId.value = setTimeout(async () => {
-        try {
-          resolve(await func(...args));
-        } catch (error) {
-          reject(error);
-        }
-      }, delay);
-    });
+    timeoutId.value = setTimeout(async () => {
+      try {
+        const result = await func(...args);
+        resolves.forEach(r => r(result));
+        resolves = [];
+      } catch (error) {
+        rejects.forEach(r => r(error));
+        rejects = [];
+      }
+    }, delay);
+
+    return promise;
   };
 }
