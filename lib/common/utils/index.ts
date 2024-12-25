@@ -1,5 +1,6 @@
 export * from './array.utils';
 export * from './cache.utils';
+export * from './class.utils';
 export * from './color.utils';
 export * from './compare.utils';
 export * from './crypto.utils';
