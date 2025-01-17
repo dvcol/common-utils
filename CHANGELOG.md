@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/dvcol/common-utils/compare/v1.19.0...v1.20.0) (2025-01-17)
+
+
+### Features
+
+* **math:** adds clamp util ([4647f81](https://github.com/dvcol/common-utils/commit/4647f81c4c706fb016218f0ae64113c1092a20b0))
+
 ## [1.19.0](https://github.com/dvcol/common-utils/compare/v1.18.3...v1.19.0) (2024-12-25)
 
 
