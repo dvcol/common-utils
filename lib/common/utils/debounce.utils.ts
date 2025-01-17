@@ -6,6 +6,12 @@ type Ref<T> = {
   value: T;
 };
 
+/**
+ * Debounce function that will wait for the delay to pass before executing the function.
+ * @param func The function to debounce.
+ * @param delay The delay in milliseconds. (default 250 ms)
+ * @param timout The timeout reference.
+ */
 export function debounce<T>(
   func: AnyFunction<T>,
   delay = 250,

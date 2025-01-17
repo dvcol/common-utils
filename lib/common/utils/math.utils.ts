@@ -34,3 +34,5 @@ export const findClosestMatch = (value: number, array?: string[]) => {
   if (Math.abs(parseInt(closestMatch.substring(1), 10)) * 2 < Math.abs(value)) return 'original';
   return closestMatch;
 };
+
+export const clamp = (val: number, min: number, max: number) => Math.min(Math.max(val, min), max);
