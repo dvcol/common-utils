@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.21.0](https://github.com/dvcol/common-utils/compare/v1.20.0...v1.21.0) (2025-01-26)
+
+
+### Features
+
+* **class:** add support for more formats ([8b32db6](https://github.com/dvcol/common-utils/commit/8b32db6e3f6d7d31b932ef5219293b567d5fd998))
+
 ## [1.20.0](https://github.com/dvcol/common-utils/compare/v1.19.0...v1.20.0) (2025-01-17)
 
 
