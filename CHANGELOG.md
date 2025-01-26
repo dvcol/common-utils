@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.21.2](https://github.com/dvcol/common-utils/compare/v1.21.1...v1.21.2) (2025-01-26)
+
+
+### Bug Fixes
+
+* **class:** export type signature ([b9a412d](https://github.com/dvcol/common-utils/commit/b9a412dbffd033f7d8d73a7af47ad16ca64560ea))
+
 ### [1.21.1](https://github.com/dvcol/common-utils/compare/v1.21.0...v1.21.1) (2025-01-26)
 
 
