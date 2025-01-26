@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.21.1](https://github.com/dvcol/common-utils/compare/v1.21.0...v1.21.1) (2025-01-26)
+
+
+### Bug Fixes
+
+* **string:** remove leading separators ([1bafefc](https://github.com/dvcol/common-utils/commit/1bafefcd9f4ff16529599704a640ccd47e58b9af))
+
 ## [1.21.0](https://github.com/dvcol/common-utils/compare/v1.20.0...v1.21.0) (2025-01-26)
 
 
