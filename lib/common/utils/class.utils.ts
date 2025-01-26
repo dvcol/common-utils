@@ -1,7 +1,7 @@
 import { toKebabCase } from '~/common';
 
 type Value = string | undefined | null;
-type Values = Record<string, boolean | string> | Value[] | Value;
+export type Values = Value | Value[] | Record<string, boolean | string> | CSSStyleDeclaration;
 
 const flatten = (styles?: Values, flat: string[] = [], camel?: boolean): string[] => {
   if (!styles) return flat;
