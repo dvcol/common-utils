@@ -99,14 +99,23 @@ export const computeAbsolutePath = (parent: string, relative: string) => {
   return `/${parentSegments.join('/')}`;
 };
 
+export const toCase = (str: string, pattern: RegExp, separator: string) =>
+  str
+    .trim()
+    .replace(pattern, separator)
+    .replace(new RegExp(`^${separator}`), '')
+    .toLowerCase();
+
 export const toSnakeCase = (str: string) =>
   str
     .trim()
     .replace(/([A-Z])/g, '_$1')
+    .replace(/^_/, '')
     .toLowerCase();
 
 export const toKebabCase = (str: string) =>
   str
     .trim()
     .replace(/([A-Z])/g, '-$1')
+    .replace(/^-/, '')
     .toLowerCase();
