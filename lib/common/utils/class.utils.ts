@@ -1,25 +1,41 @@
+import { toKebabCase } from '~/common';
+
 type Value = string | undefined | null;
-type Values = Record<string, boolean> | Value[] | Value;
-const parse = (values?: Values, separator = ' '): string | undefined => {
-  if (!values) return;
-  if (typeof values === 'string') return values;
-  if (Array.isArray(values)) return values.filter(Boolean).join(separator);
-  return Object.entries(values)
-    .filter(([_, value]) => value)
-    .map(([key]) => key)
-    .join(separator);
+type Values = Record<string, boolean | string> | Value[] | Value;
+
+const flatten = (styles?: Values, flat: string[] = [], camel?: boolean): string[] => {
+  if (!styles) return flat;
+  if (typeof styles === 'string') flat.push(styles);
+  else if (Array.isArray(styles)) {
+    styles.forEach(style => {
+      if (!style) return;
+      flatten(style, flat, camel);
+    });
+  } else if (typeof styles === 'object') {
+    Object.entries(styles).forEach(([key, value]) => {
+      if (!value) return;
+      if (typeof value === 'string') {
+        if (camel) flat.push(`${toKebabCase(key)}:${value}`);
+        else flat.push(`${key}:${value}`);
+      } else flat.push(key);
+    });
+  }
+  return flat;
 };
 
-const merge = (styles?: Values, ...args: Value[]): Values => {
-  if (!args.length) return styles;
-  if (!styles) return args;
-  if (Array.isArray(styles)) return styles.concat(args);
-  if (typeof styles === 'string') return [styles, ...args];
-  return args.reduce((acc, value) => {
-    if (value?.length) acc[value] = true;
-    return acc;
-  }, styles);
+const parse = (args: Values[], separator = '', camel?: boolean): string => {
+  if (!args.length) return;
+  const flat: string[] = [];
+  args.forEach(arg => flatten(arg, flat, camel));
+  return flat
+    .filter(Boolean)
+    .map(style => {
+      if (!separator) return style.trim();
+      const _style = style.trim();
+      return _style.endsWith(separator) ? _style.slice(0, -1) : _style;
+    })
+    .join(`${separator} `);
 };
 
-export const toClass = (classes?: Values, ...args: Value[]) => parse(merge(classes, ...args));
-export const toStyle = (styles?: Values, ...args: Value[]) => parse(merge(styles, ...args), '; ');
+export const toClass = (...args: Values[]) => parse(args);
+export const toStyle = (...args: Values[]) => parse(args, ';', true);

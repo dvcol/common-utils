@@ -101,6 +101,12 @@ export const computeAbsolutePath = (parent: string, relative: string) => {
 
 export const toSnakeCase = (str: string) =>
   str
+    .trim()
     .replace(/([A-Z])/g, '_$1')
-    .toLowerCase()
-    .slice(1);
+    .toLowerCase();
+
+export const toKebabCase = (str: string) =>
+  str
+    .trim()
+    .replace(/([A-Z])/g, '-$1')
+    .toLowerCase();
