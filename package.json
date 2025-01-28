@@ -208,7 +208,8 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "pretty-bytes": "^6.1.1"
+    "pretty-bytes": "^6.1.1",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",

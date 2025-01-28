@@ -1,3 +1,5 @@
+import { v4 } from 'uuid';
+
 import { ParsingRelativePathError } from '~/common/models/error.model';
 
 /**
@@ -77,7 +79,7 @@ export const deCapitalise = (input?: string) => {
   return capitalizeEachWord(input);
 };
 
-export const getUUID = () => crypto.getRandomValues(new Uint32Array(4)).join('-');
+export const getUUID = v4;
 
 export const toPathSegment = (str?: string, trailing = false): string => {
   let _str = str?.trim();
