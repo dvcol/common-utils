@@ -36,3 +36,5 @@ export const findClosestMatch = (value: number, array?: string[]) => {
 };
 
 export const clamp = (val: number, min: number, max: number) => Math.min(Math.max(val, min), max);
+
+export const randomInt = (min = 0, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
