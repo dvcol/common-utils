@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.22.0](https://github.com/dvcol/common-utils/compare/v1.21.3...v1.22.0) (2025-01-31)
+
+
+### Features
+
+* **math:** adds random int util ([69e382a](https://github.com/dvcol/common-utils/commit/69e382a4faeadea3af30ba2a5a1cebc4f28fbfce))
+
 ### [1.21.3](https://github.com/dvcol/common-utils/compare/v1.21.2...v1.21.3) (2025-01-28)
 
 ### [1.21.2](https://github.com/dvcol/common-utils/compare/v1.21.1...v1.21.2) (2025-01-26)
