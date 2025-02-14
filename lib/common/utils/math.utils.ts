@@ -38,3 +38,7 @@ export const findClosestMatch = (value: number, array?: string[]) => {
 export const clamp = (val: number, min: number, max: number) => Math.min(Math.max(val, min), max);
 
 export const randomInt = (min = 0, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+export const round = (value: number, precision = 0) => Math.round(value * 10 ** precision) / 10 ** precision;
+
+export const percent = (value: number, total: number, precision = 2) => round((value / total) * 100, precision);
