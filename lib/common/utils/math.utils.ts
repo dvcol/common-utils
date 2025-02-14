@@ -41,4 +41,4 @@ export const randomInt = (min = 0, max = 100) => Math.floor(Math.random() * (max
 
 export const round = (value: number, precision = 0) => Math.round(value * 10 ** precision) / 10 ** precision;
 
-export const percent = (value: number, total: number, precision = 2) => round((value / total) * 100, precision);
+export const percent = (value: number, total = 100, precision = 2) => round((value / total) * 100, precision);
