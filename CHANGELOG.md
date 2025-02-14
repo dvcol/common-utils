@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.23.0](https://github.com/dvcol/common-utils/compare/v1.22.0...v1.23.0) (2025-02-14)
+
+
+### Features
+
+* **math:** adds math percent utility ([91fa723](https://github.com/dvcol/common-utils/commit/91fa723afacaa364b1c0ca6cada9673a1daa6c95))
+
 ## [1.22.0](https://github.com/dvcol/common-utils/compare/v1.21.3...v1.22.0) (2025-01-31)
 
 
