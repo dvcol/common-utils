@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.24.0](https://github.com/dvcol/common-utils/compare/v1.23.1...v1.24.0) (2025-03-03)
+
+
+### Features
+
+* **touch:** rework touch handler & add scroll ignore ([5c07cf9](https://github.com/dvcol/common-utils/commit/5c07cf9be758d61fef893113d310dc793091e6ed))
+
 ### [1.23.1](https://github.com/dvcol/common-utils/compare/v1.23.0...v1.23.1) (2025-02-14)
 
 
