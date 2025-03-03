@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.24.1](https://github.com/dvcol/common-utils/compare/v1.24.0...v1.24.1) (2025-03-03)
+
+
+### Bug Fixes
+
+* **touch:** fix typo in scroll diff calculation ([d6cc7c6](https://github.com/dvcol/common-utils/commit/d6cc7c628f5b3d9c3e114c97b855054065b05ab5))
+
 ## [1.24.0](https://github.com/dvcol/common-utils/compare/v1.23.1...v1.24.0) (2025-03-03)
 
 
