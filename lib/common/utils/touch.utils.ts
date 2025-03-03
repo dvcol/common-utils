@@ -48,7 +48,7 @@ const getDiff = (touch: TouchState, scroll: ScrollState = {}): Position => {
   if (!scroll.start || !scroll.end) return { x, y };
   return {
     x: x + (scroll.start.x - scroll.end.x),
-    y: y + scroll.start.y - scroll.end.y,
+    y: y + (scroll.start.y - scroll.end.y),
   };
 };
 
