@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.25.0](https://github.com/dvcol/common-utils/compare/v1.24.1...v1.25.0) (2025-03-04)
+
+
+### Features
+
+* **debounce:** adds cancellation to debounce ([791524f](https://github.com/dvcol/common-utils/commit/791524f8c3d7db899492b69a6c69d078889d9249))
+
 ### [1.24.1](https://github.com/dvcol/common-utils/compare/v1.24.0...v1.24.1) (2025-03-03)
 
 
