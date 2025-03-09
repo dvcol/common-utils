@@ -76,6 +76,11 @@
       "require": "./dist/common/utils/crypto.utils.cjs",
       "import": "./dist/common/utils/crypto.utils.js"
     },
+    "./common/cursor": {
+      "types": "./dist/common/utils/cursor.utils.d.ts",
+      "require": "./dist/common/utils/cursor.utils.cjs",
+      "import": "./dist/common/utils/cursor.utils.js"
+    },
     "./common/date": {
       "types": "./dist/common/utils/date.utils.d.ts",
       "require": "./dist/common/utils/date.utils.cjs",
@@ -90,6 +95,11 @@
       "types": "./dist/common/utils/download.utils.d.ts",
       "require": "./dist/common/utils/download.utils.cjs",
       "import": "./dist/common/utils/download.utils.js"
+    },
+    "./common/element": {
+      "types": "./dist/common/utils/element.utils.d.ts",
+      "require": "./dist/common/utils/element.utils.cjs",
+      "import": "./dist/common/utils/element.utils.js"
     },
     "./common/format": {
       "types": "./dist/common/utils/format.utils.d.ts",
