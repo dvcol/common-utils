@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.26.0](https://github.com/dvcol/common-utils/compare/v1.25.0...v1.26.0) (2025-03-09)
+
+
+### Features
+
+* **cursor:** adds cursor & element utils ([ea9e45e](https://github.com/dvcol/common-utils/commit/ea9e45ebb4907f5021a88a2d9a77c049e8907626))
+
 ## [1.25.0](https://github.com/dvcol/common-utils/compare/v1.24.1...v1.25.0) (2025-03-04)
 
 
