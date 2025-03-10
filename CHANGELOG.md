@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.26.3](https://github.com/dvcol/common-utils/compare/v1.26.2...v1.26.3) (2025-03-10)
+
+
+### Bug Fixes
+
+* **cursor:** adds missing support for safari ([37f9591](https://github.com/dvcol/common-utils/commit/37f9591b597a6a11e4558a448068a03cfcab7dc6))
+
 ### [1.26.2](https://github.com/dvcol/common-utils/compare/v1.26.1...v1.26.2) (2025-03-10)
 
 
