@@ -42,7 +42,9 @@ const isCursorOverText = ({ clientX, clientY }: Position) => {
   // No element found for type safety
   if (!element) return false;
   // Check if the element has user-select: none
-  if (getComputedStyle(element).userSelect === 'none') return false;
+  const style = getComputedStyle(element);
+  // -webkit-user-select is for Safari
+  if (style?.userSelect === 'none' || style?.['-webkit-user-select'] === 'none') return false;
 
   // Check if the element is a text-input or contenteditable (to avoid false positives)
   if (isTextInputType(element)) return true;
