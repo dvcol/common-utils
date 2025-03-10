@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.26.2](https://github.com/dvcol/common-utils/compare/v1.26.1...v1.26.2) (2025-03-10)
+
+
+### Bug Fixes
+
+* **cursor:** ignore user-select none when deciding text elements ([48eac80](https://github.com/dvcol/common-utils/commit/48eac80c8be45d1b21d16930929e0964d411483c))
+
 ### [1.26.1](https://github.com/dvcol/common-utils/compare/v1.26.0...v1.26.1) (2025-03-09)
 
 ## [1.26.0](https://github.com/dvcol/common-utils/compare/v1.25.0...v1.26.0) (2025-03-09)
