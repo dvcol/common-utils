@@ -39,7 +39,10 @@ const isTextInputType = (element: Element) => {
 const isCursorOverText = ({ clientX, clientY }: Position) => {
   // Get the exact element under the cursor
   const element = document.elementFromPoint(clientX, clientY);
-  if (!element) return false; // No element found for type safety
+  // No element found for type safety
+  if (!element) return false;
+  // Check if the element has user-select: none
+  if (getComputedStyle(element).userSelect === 'none') return false;
 
   // Check if the element is a text-input or contenteditable (to avoid false positives)
   if (isTextInputType(element)) return true;
