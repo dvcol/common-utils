@@ -10,12 +10,13 @@ export const getFocusableElement = (
   ],
 ): HTMLElement | null | undefined => element?.querySelector<HTMLElement>(targets.join(','));
 
-const clickableTags = new Set(['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'LABEL', 'SUMMARY', 'OPTION', 'DETAILS', 'VIDEO', 'AUDIO']);
+export const clickableTags = new Set(['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'LABEL', 'SUMMARY', 'OPTION', 'DETAILS', 'VIDEO', 'AUDIO']);
 
 export const isClickable = (element: Element) => {
   if (element.hasAttribute('disabled') && ['', 'true', null].includes(element.getAttribute('disabled'))) return false;
   if (element.hasAttribute('readonly') && ['', 'true', null].includes(element.getAttribute('readonly'))) return false;
   if ((element as HTMLElement).tabIndex < 0) return false;
+  if (element.hasAttribute('role') && ['button', 'link'].includes(element.getAttribute('role')?.toLowerCase())) return true;
   return (
     clickableTags.has(element.tagName) ||
     element.hasAttribute('onclick') ||
@@ -38,3 +39,8 @@ export const getClickableAncestor = (
   if (!element.parentElement) return;
   return getClickableAncestor(element.parentElement, boundary, selector);
 };
+
+export const clickableSelector =
+  "a, button, input, textarea, select, details, summary, [role='button'], [role='link'], [onclick], audio, video, [tabindex]:not([tabindex='-1'])";
+
+export const closestClickableElement = (element: Element) => element.closest(clickableSelector);
