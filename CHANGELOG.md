@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.27.0](https://github.com/dvcol/common-utils/compare/v1.26.3...v1.27.0) (2025-03-23)
+
+
+### Features
+
+* **element:** adds find closest clickable element ([1d36100](https://github.com/dvcol/common-utils/commit/1d36100bbb03730f74070f7c8e965399e4cdc5a5))
+
 ### [1.26.3](https://github.com/dvcol/common-utils/compare/v1.26.2...v1.26.3) (2025-03-10)
 
 
