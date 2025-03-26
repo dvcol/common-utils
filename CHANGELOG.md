@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.28.0](https://github.com/dvcol/common-utils/compare/v1.27.0...v1.28.0) (2025-03-26)
+
+
+### Features
+
+* **element:** adds focus list getter ([7ab4924](https://github.com/dvcol/common-utils/commit/7ab49246cd4796005d9d6759bb995182f476e028))
+
 ## [1.27.0](https://github.com/dvcol/common-utils/compare/v1.26.3...v1.27.0) (2025-03-23)
 
 
