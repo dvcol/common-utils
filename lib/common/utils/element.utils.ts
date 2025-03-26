@@ -1,14 +1,40 @@
+export const focusableElementSelectors = Object.freeze([
+  'button:not([disabled])',
+  '[href]', // Ensures only real links are focusable
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]', // Includes manually focusable elements
+] as const);
+
+export const tabFocusableElementSelectors = Object.freeze([
+  'button:not([disabled], [tabindex="-1"])',
+  '[href]:not([tabindex="-1"])',
+  'input:not([disabled], [tabindex="-1"])',
+  'select:not([disabled], [tabindex="-1"])',
+  'textarea:not([disabled], [tabindex="-1"])',
+  '[tabindex]:not([tabindex="-1"])',
+] as const);
+
 export const getFocusableElement = (
   element?: Element | null,
-  targets: string[] = [
-    'button:not([disabled])',
-    '[href]',
-    'input:not([disabled])',
-    'select:not([disabled])',
-    'textarea:not([disabled])',
-    '[tabindex]:not([tabindex="-1"])',
-  ],
+  targets: string[] | readonly string[] = tabFocusableElementSelectors,
 ): HTMLElement | null | undefined => element?.querySelector<HTMLElement>(targets.join(','));
+
+/**
+ * Get all focusable children of an element (excluding non tabbable elements (disabled, readonly, tabIndex=-1))
+ * @param element - The element to search within
+ * @param targets - Array of selectors to search for focusable elements
+ * @returns Array of focusable elements sorted by tabIndex (from lowest to highest)
+ */
+export const getFocusableElements = (
+  element?: Element | null,
+  targets: string[] | readonly string[] = tabFocusableElementSelectors,
+): HTMLElement[] | undefined => {
+  const elements = element?.querySelectorAll<HTMLElement>(targets.join(','));
+  if (!elements) return;
+  return Array.from(elements).sort((a, b) => (a.tabIndex || 0) - (b.tabIndex || 0));
+};
 
 export const clickableTags = new Set(['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'LABEL', 'SUMMARY', 'OPTION', 'DETAILS', 'VIDEO', 'AUDIO']);
 
