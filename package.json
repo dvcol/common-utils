@@ -51,6 +51,11 @@
       "require": "./dist/common/utils/array.utils.cjs",
       "import": "./dist/common/utils/array.utils.js"
     },
+    "./common/browser": {
+      "types": "./dist/common/utils/browser.utils.d.ts",
+      "require": "./dist/common/utils/browser.utils.cjs",
+      "import": "./dist/common/utils/browser.utils.js"
+    },
     "./common/cache": {
       "types": "./dist/common/utils/cache.utils.d.ts",
       "require": "./dist/common/utils/cache.utils.cjs",
@@ -120,6 +125,11 @@
       "types": "./dist/common/utils/math.utils.d.ts",
       "require": "./dist/common/utils/math.utils.cjs",
       "import": "./dist/common/utils/math.utils.js"
+    },
+    "./common/mobile": {
+      "types": "./dist/common/utils/mobile.utils.d.ts",
+      "require": "./dist/common/utils/mobile.utils.cjs",
+      "import": "./dist/common/utils/mobile.utils.js"
     },
     "./common/navigator": {
       "types": "./dist/common/utils/navigator.utils.d.ts",

@@ -1,4 +1,5 @@
 export * from './array.utils';
+export * from './browser.utils';
 export * from './cache.utils';
 export * from './class.utils';
 export * from './color.utils';
@@ -13,6 +14,7 @@ export * from './format.utils';
 export * from './intl.utils';
 export * from './logger.utils';
 export * from './math.utils';
+export * from './mobile.utils';
 export * from './navigator.utils';
 export * from './object.utils';
 export * from './observable.utils';
