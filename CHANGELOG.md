@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.29.0](https://github.com/dvcol/common-utils/compare/v1.28.0...v1.29.0) (2025-03-29)
+
+
+### Features
+
+* **browser:** adds browser & mobile utils ([99cbb42](https://github.com/dvcol/common-utils/commit/99cbb42c08c2d297a8f9b9bf53eeef32e2d9a517))
+
 ## [1.28.0](https://github.com/dvcol/common-utils/compare/v1.27.0...v1.28.0) (2025-03-26)
 
 
