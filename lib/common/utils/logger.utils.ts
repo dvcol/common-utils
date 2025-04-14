@@ -87,7 +87,7 @@ export const ConsoleFormat = {
   Style: '%c',
 };
 
-export const colorize = <T extends unknown[]>(color: string, ...args: T): Parameters<typeof console.log> => {
+export const colorize = <T extends unknown[]>(color: string, ...args: T): typeof args => {
   if (!args?.some(arg => typeof arg === 'string')) return args;
   let prefix = '%c';
   const _args: T = [`color: ${color}`] as T;
@@ -118,9 +118,9 @@ export const proxyLoggerFilter: ProxyLoggerFilter = {
   error: (logLevel: LogLevel) => logLevel >= LogLevel.Error,
 } as const;
 
-type ProxyLoggerInit = {
+type ProxyLoggerInit<T extends Console = Console> = {
   proxy?: ProxyLoggerFilter;
-  logger?: Console;
+  logger?: T;
   debug?: boolean | (() => boolean);
   logLevel?: number | (() => number);
   timeFormat?: TimeStampFormats | (() => TimeStampFormats);
@@ -128,21 +128,21 @@ type ProxyLoggerInit = {
 /**
  * Proxy logger to control this extension log level
  */
-export class ProxyLogger {
-  private readonly _logger: Console;
+export class ProxyLogger<T extends Console = Console> {
+  private readonly _logger: T;
   private readonly _proxy?: ProxyLoggerFilter;
 
-  private readonly _timeFormat: ProxyLoggerInit['timeFormat'];
-  private readonly _debug: ProxyLoggerInit['debug'];
-  private _logLevel: ProxyLoggerInit['logLevel'];
+  private readonly _timeFormat: ProxyLoggerInit<T>['timeFormat'];
+  private readonly _debug: ProxyLoggerInit<T>['debug'];
+  private _logLevel: ProxyLoggerInit<T>['logLevel'];
 
   constructor({
-    logger = console,
+    logger = console as T,
     debug = false,
     proxy = proxyLoggerFilter,
     logLevel = LogLevel.Warn,
     timeFormat = TimeStampFormat.Time,
-  }: ProxyLoggerInit = {}) {
+  }: ProxyLoggerInit<T> = {}) {
     this._logger = logger;
     this._proxy = proxy;
     this._debug = debug;
@@ -172,27 +172,27 @@ export class ProxyLogger {
     if (this.isDebug) console.debug('[ProxyLogger] - Log suppressed:', ...args);
   };
 
-  get trace() {
+  get trace(): typeof this._logger.trace {
     if (!this._proxy?.trace?.(this.logLevel)) return this.null;
     return this._logger.trace.bind(this._logger);
   }
 
-  get debug() {
+  get debug(): typeof this._logger.debug {
     if (!this._proxy?.debug?.(this.logLevel)) return this.null;
     return this._logger.debug.bind(this._logger);
   }
 
-  get info() {
+  get info(): typeof this._logger.info {
     if (!this._proxy?.info?.(this.logLevel)) return this.null;
     return this._logger.info.bind(this._logger);
   }
 
-  get warn() {
+  get warn(): typeof this._logger.warn {
     if (!this._proxy?.warn?.(this.logLevel)) return this.null;
     return this._logger.warn.bind(this._logger);
   }
 
-  get error() {
+  get error(): typeof this._logger.error {
     if (!this._proxy?.error?.(this.logLevel)) return this.null;
     return this._logger.error.bind(this._logger);
   }
