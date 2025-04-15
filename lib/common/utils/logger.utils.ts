@@ -30,7 +30,7 @@ export type TimeStampFormats = keyof typeof TimeStampFormat;
  * @param scope the logging scope, default to globalThis._proxyLoggerScope
  * @param format the timestamp format, default to 'TIME'
  */
-export const getTimestamp = (scope?: string, format: TimeStampFormats = TimeStampFormat.Time) => {
+export const getTimestamp = (scope?: string, format: TimeStampFormats = TimeStampFormat.Time): string => {
   let date: string;
   if (format === TimeStampFormat.ISO) date = new Date().toISOString();
   else if (format === TimeStampFormat.Date) date = new Date().toLocaleDateString().split('T').at(0);
@@ -172,27 +172,27 @@ export class ProxyLogger<T extends Console = Console> {
     if (this.isDebug) console.debug('[ProxyLogger] - Log suppressed:', ...args);
   };
 
-  get trace(): typeof this._logger.trace {
+  get trace(): Console['trace'] {
     if (!this._proxy?.trace?.(this.logLevel)) return this.null;
     return this._logger.trace.bind(this._logger);
   }
 
-  get debug(): typeof this._logger.debug {
+  get debug(): Console['debug'] {
     if (!this._proxy?.debug?.(this.logLevel)) return this.null;
     return this._logger.debug.bind(this._logger);
   }
 
-  get info(): typeof this._logger.info {
+  get info(): Console['info'] {
     if (!this._proxy?.info?.(this.logLevel)) return this.null;
     return this._logger.info.bind(this._logger);
   }
 
-  get warn(): typeof this._logger.warn {
+  get warn(): Console['warn'] {
     if (!this._proxy?.warn?.(this.logLevel)) return this.null;
     return this._logger.warn.bind(this._logger);
   }
 
-  get error(): typeof this._logger.error {
+  get error(): Console['error'] {
     if (!this._proxy?.error?.(this.logLevel)) return this.null;
     return this._logger.error.bind(this._logger);
   }
@@ -202,41 +202,41 @@ export class ProxyLogger<T extends Console = Console> {
   static colorize = colorize;
 
   color = {
-    debug: (...args: Parameters<typeof console.debug>) => this.debug(...ProxyLogger.colorize(LoggerColor.Debug, ...args)),
-    info: (...args: Parameters<typeof console.info>) => this.info(...ProxyLogger.colorize(LoggerColor.Info, ...args)),
-    warn: (...args: Parameters<typeof console.warn>) => this.warn(...ProxyLogger.colorize(LoggerColor.Warn, ...args)),
-    error: (...args: Parameters<typeof console.error>) => this.error(...ProxyLogger.colorize(LoggerColor.Error, ...args)),
-    success: (...args: Parameters<typeof console.info>) => this.info(...ProxyLogger.colorize(LoggerColor.Success, ...args)),
+    debug: (...args: Parameters<typeof this.debug>) => this.debug(...ProxyLogger.colorize(LoggerColor.Debug, ...args)),
+    info: (...args: Parameters<typeof this.info>) => this.info(...ProxyLogger.colorize(LoggerColor.Info, ...args)),
+    warn: (...args: Parameters<typeof this.warn>) => this.warn(...ProxyLogger.colorize(LoggerColor.Warn, ...args)),
+    error: (...args: Parameters<typeof this.error>) => this.error(...ProxyLogger.colorize(LoggerColor.Error, ...args)),
+    success: (...args: Parameters<typeof this.info>) => this.info(...ProxyLogger.colorize(LoggerColor.Success, ...args)),
   };
 
   /**
    * Logger with timestamp but looses stack trace origin
    */
   time = {
-    debug: (...args: Parameters<typeof console.debug>) => this.debug(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
-    info: (...args: Parameters<typeof console.info>) => this.info(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
-    warn: (...args: Parameters<typeof console.warn>) => this.warn(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
-    error: (...args: Parameters<typeof console.error>) => this.error(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+    debug: (...args: Parameters<typeof this.debug>) => this.debug(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+    info: (...args: Parameters<typeof this.info>) => this.info(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+    warn: (...args: Parameters<typeof this.warn>) => this.warn(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+    error: (...args: Parameters<typeof this.error>) => this.error(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
     color: {
-      debug: (...args: Parameters<typeof console.debug>) => this.color.debug(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
-      info: (...args: Parameters<typeof console.info>) => this.color.info(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
-      warn: (...args: Parameters<typeof console.warn>) => this.color.warn(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
-      error: (...args: Parameters<typeof console.error>) => this.color.error(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
-      success: (...args: Parameters<typeof console.info>) => this.color.success(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+      debug: (...args: Parameters<typeof this.debug>) => this.color.debug(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+      info: (...args: Parameters<typeof this.info>) => this.color.info(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+      warn: (...args: Parameters<typeof this.warn>) => this.color.warn(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+      error: (...args: Parameters<typeof this.error>) => this.color.error(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
+      success: (...args: Parameters<typeof this.info>) => this.color.success(ProxyLogger.timestamp(undefined, this.timeFormat), ...args),
     },
   };
 
   scope = (_scope: string) => ({
-    debug: (...args: Parameters<typeof console.debug>) => this.debug(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
-    info: (...args: Parameters<typeof console.info>) => this.info(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
-    warn: (...args: Parameters<typeof console.warn>) => this.warn(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
-    error: (...args: Parameters<typeof console.error>) => this.error(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+    debug: (...args: Parameters<typeof this.debug>) => this.debug(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+    info: (...args: Parameters<typeof this.info>) => this.info(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+    warn: (...args: Parameters<typeof this.warn>) => this.warn(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+    error: (...args: Parameters<typeof this.error>) => this.error(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
     color: {
-      debug: (...args: Parameters<typeof console.debug>) => this.color.debug(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
-      info: (...args: Parameters<typeof console.info>) => this.color.info(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
-      warn: (...args: Parameters<typeof console.warn>) => this.color.warn(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
-      error: (...args: Parameters<typeof console.error>) => this.color.error(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
-      success: (...args: Parameters<typeof console.info>) => this.color.success(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+      debug: (...args: Parameters<typeof this.debug>) => this.color.debug(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+      info: (...args: Parameters<typeof this.info>) => this.color.info(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+      warn: (...args: Parameters<typeof this.warn>) => this.color.warn(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+      error: (...args: Parameters<typeof this.error>) => this.color.error(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
+      success: (...args: Parameters<typeof this.info>) => this.color.success(ProxyLogger.timestamp(_scope, this.timeFormat), ...args),
     },
   });
 
