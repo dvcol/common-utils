@@ -1,9 +1,41 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- generic type
 type AnyFunction<Return, Params extends any[] = any[]> = (...args: Params) => Promise<Return> | Return;
+type AnySyncFunction<Return, Params extends any[] = any[]> = (...args: Params) => Return;
 type Timeout = ReturnType<typeof setTimeout>;
 
 type Ref<T> = {
   value: T;
+};
+
+export type DebouncedFunction<Result, Cancel = void, Fn extends AnyFunction<Result> = AnyFunction<Result>> = {
+  (...args: Parameters<Fn>): Promise<Result>;
+  /**
+   * The timeout currently running if any.
+   */
+  timout?: Timeout;
+  /**
+   * Cancel the running timeout, but does not reject/resolve the outsanding promise.
+   * To manually reject/resolve the debounce, please use `resolve` or `reject`
+   */
+  cancel: () => Promise<Cancel | undefined>;
+  /**
+   * Resolve the current promise early and clear timeout
+   * @param value
+   */
+  resolve: (value: Result) => void;
+  /**
+   * Reject the current promise early and clear timeout
+   * @param error
+   */
+  reject: (error: unknown) => void;
+  /**
+   * The arguments passed to the previous call (used for cancel callback)
+   */
+  previous: Parameters<Fn>;
+  /**
+   * The current promise (if any)
+   */
+  promise: Promise<Result> | undefined;
 };
 
 /**
@@ -13,54 +45,49 @@ type Ref<T> = {
  * @param timout The timeout reference.
  * @param cancel A function to run (with n-1 arguments) when a debounced call is canceled (i.e. before the delay).
  */
-export function debounce<T, C>(
-  func: AnyFunction<T>,
+export function debounce<Result, Cancel>(
+  func: AnyFunction<Result>,
   delay = 250,
   timout: Ref<Timeout | undefined> = { value: undefined },
-  cancel?: AnyFunction<C>,
-): {
-  (...args: Parameters<typeof func>): Promise<T>;
-  timout?: Timeout;
-  cancel: () => Promise<C | undefined>;
-  resolve: ((value: T) => void)[];
-  reject: ((error: unknown) => void)[];
-  previous: Parameters<typeof func>;
-} {
+  cancel?: AnySyncFunction<Cancel>,
+): DebouncedFunction<Result, Cancel, typeof func> {
   const timeoutId = timout;
-  const resolves: ((value: T) => void)[] = [];
-  const rejects: ((error: unknown) => void)[] = [];
+  let resolve: (value: Result) => void;
+  let reject: (error: unknown) => void;
+  let promise: Promise<Result> | undefined;
   const previous: Parameters<typeof func> = [];
 
-  const clear = async () => {
+  const clear = () => {
     if (timeoutId.value === undefined) return;
     clearTimeout(timeoutId.value);
-    const result = await cancel?.(...previous);
+    const result = cancel?.(...previous);
     timeoutId.value = undefined;
     previous.length = 0;
     return result;
   };
 
-  const fn = async (...args: Parameters<typeof func>[]): Promise<T> => {
-    await clear();
-    const { resolve, reject, promise } = Promise.withResolvers<T>();
-    resolves.push(resolve);
-    rejects.push(reject);
+  const finish = () => {
+    timeoutId.value = undefined;
+    previous.length = 0;
+    promise = undefined;
+  };
+
+  const fn = async (...args: Parameters<typeof func>[]): Promise<Result> => {
+    if (!promise) ({ resolve, reject, promise } = Promise.withResolvers<Result>());
+
+    clear();
 
     previous.push(...args);
     timeoutId.value = setTimeout(async () => {
       try {
         const result = await func(...args);
-        resolves.forEach(r => r(result));
-        resolves.length = 0;
+        resolve(result);
       } catch (error) {
-        rejects.forEach(r => r(error));
-        rejects.length = 0;
+        reject(error);
       } finally {
-        timeoutId.value = undefined;
-        previous.length = 0;
+        finish();
       }
     }, delay);
-
     return promise;
   };
 
@@ -72,38 +99,40 @@ export function debounce<T, C>(
       get: () => timeoutId.value,
     },
     resolve: {
-      get: () => resolves,
+      value: (value: Result) => {
+        resolve(value);
+        finish();
+      },
     },
     reject: {
-      get: () => rejects,
+      value: (error: unknown) => {
+        reject(error);
+        finish();
+      },
     },
     previous: {
       get: () => previous,
     },
+    promise: {
+      get: () => promise,
+    },
   });
 
-  return fn as {
-    (...args: Parameters<typeof func>): Promise<T>;
-    timeout?: Timeout;
-    cancel: () => Promise<C | undefined>;
-    resolve: ((value: T) => void)[];
-    reject: ((error: unknown) => void)[];
-    previous: Parameters<typeof func>;
-  };
+  return fn as DebouncedFunction<Result, Cancel, typeof func>;
 }
 
-export function useDebounce<T>({
+export function useDebounce<Result>({
   fn,
   cancel,
   delay = 250,
   timeout = { value: undefined },
 }: {
-  fn: AnyFunction<T>;
+  fn: AnyFunction<Result>;
   cancel?: AnyFunction<unknown>;
   delay?: number;
   timeout?: Ref<Timeout | undefined>;
 }): {
-  debounce: (...args: Parameters<typeof fn>) => Promise<T>;
+  debounce: (...args: Parameters<typeof fn>) => Promise<Result>;
   cancel: () => unknown | Promise<unknown>;
 } {
   const debounced = debounce(fn, delay, timeout, cancel);
