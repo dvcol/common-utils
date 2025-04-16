@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.29.3](https://github.com/dvcol/common-utils/compare/v1.29.2...v1.29.3) (2025-04-16)
+
+
+### Bug Fixes
+
+* **debounce:** improve typing, fix resolve/reject & remove async cancel ([675aa4a](https://github.com/dvcol/common-utils/commit/675aa4aede842242e186d4ef34dae3e70b2accfb))
+
 ### [1.29.2](https://github.com/dvcol/common-utils/compare/v1.29.1...v1.29.2) (2025-04-15)
 
 ### [1.29.1](https://github.com/dvcol/common-utils/compare/v1.29.0...v1.29.1) (2025-04-14)
