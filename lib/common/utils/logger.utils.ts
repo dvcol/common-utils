@@ -11,9 +11,9 @@ export enum LogLevel {
  * Convert a string log level to LogLevel enum
  * @param logLevel the log level string
  */
-export const toLogLevel = (logLevel: keyof typeof LogLevel | 'silent' | 'error' | 'warn' | 'info' | 'debug') => {
+export const toLogLevel = (logLevel: keyof typeof LogLevel | 'silent' | 'error' | 'warn' | 'info' | 'debug'): LogLevel => {
   const _logLevel = logLevel.charAt(0).toUpperCase() + logLevel.slice(1).toLowerCase();
-  return LogLevel[_logLevel];
+  return LogLevel[_logLevel] ?? LogLevel.Silent;
 };
 
 export const TimeStampFormat = {
