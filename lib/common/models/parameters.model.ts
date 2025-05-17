@@ -36,8 +36,19 @@ type ExtractRecursiveParams<
   ? ExtractRecursiveParams<Tail, Result & ExtractSegmentParams<Head>, Types>
   : Result & ExtractSegmentParams<Path, Types>;
 
-// Exclude non-parameter segments
+/**
+ * Extracts the parameters from a path template.
+ * If the template does not contain any parameters, Record<string, ParamValue<Types> | undefined>
+ */
 export type ExtractPathParams<Path extends string, Types extends Partial<ParamTypeMap> = ParamTypeMap> = Prettify<
+  Path extends `${infer _Start}/:${infer _End}` ? ExtractRecursiveParams<Path, Types> : Record<string, ParamValue<Types> | undefined>
+>;
+
+/**
+ * Extracts the parameters from a strict path template.
+ * If the template does not contain any parameters, Record<string, never> is returned.
+ */
+export type ExtractStrictPathParams<Path extends string, Types extends Partial<ParamTypeMap> = ParamTypeMap> = Prettify<
   Path extends `${infer _Start}/:${infer _End}` ? ExtractRecursiveParams<Path, Types> : Record<string, never>
 >;
 
