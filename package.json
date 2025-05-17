@@ -146,6 +146,11 @@
       "require": "./dist/common/utils/observable.utils.cjs",
       "import": "./dist/common/utils/observable.utils.js"
     },
+    "./common/parameters": {
+      "types": "./dist/common/utils/parameters.utils.d.ts",
+      "require": "./dist/common/utils/parameters.utils.cjs",
+      "import": "./dist/common/utils/parameters.utils.js"
+    },
     "./common/promise": {
       "types": "./dist/common/utils/promise.utils.d.ts",
       "require": "./dist/common/utils/promise.utils.cjs",
