@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.31.1](https://github.com/dvcol/common-utils/compare/v1.31.0...v1.31.1) (2025-05-17)
+
+
+### Bug Fixes
+
+* **export:** rework model exports & add strict params ([bd327a7](https://github.com/dvcol/common-utils/commit/bd327a7d226cedc878b1b1123759566d88394814))
+
 ## [1.31.0](https://github.com/dvcol/common-utils/compare/v1.30.0...v1.31.0) (2025-05-17)
 
 
