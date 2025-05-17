@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.31.0](https://github.com/dvcol/common-utils/compare/v1.30.0...v1.31.0) (2025-05-17)
+
+
+### Features
+
+* **parameters:** adds custom type map ([723bfd4](https://github.com/dvcol/common-utils/commit/723bfd4ea6750f2206877b1612bfbf47f1ed9a4a))
+
 ## [1.30.0](https://github.com/dvcol/common-utils/compare/v1.29.4...v1.30.0) (2025-05-17)
 
 
