@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.30.0](https://github.com/dvcol/common-utils/compare/v1.29.4...v1.30.0) (2025-05-17)
+
+
+### Features
+
+* **parameters:** adds path parameters extraction ([38bebf4](https://github.com/dvcol/common-utils/commit/38bebf4305e5b1976b0eb982f156e542f2f03fc5))
+
 ### [1.29.4](https://github.com/dvcol/common-utils/compare/v1.29.3...v1.29.4) (2025-04-17)
 
 
