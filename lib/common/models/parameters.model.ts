@@ -30,10 +30,10 @@ type ExtractSegmentParams<
 // Recursively parse the full path template
 type ExtractRecursiveParams<
   Path extends string,
-  Result extends object = {},
   Types extends Partial<ParamTypeMap> = ParamTypeMap,
+  Result extends object = {},
 > = Path extends `${infer Head}/${infer Tail}`
-  ? ExtractRecursiveParams<Tail, Result & ExtractSegmentParams<Head>, Types>
+  ? ExtractRecursiveParams<Tail, Types, Result & ExtractSegmentParams<Head>>
   : Result & ExtractSegmentParams<Path, Types>;
 
 /**
