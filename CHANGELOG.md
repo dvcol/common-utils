@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.32.0](https://github.com/dvcol/common-utils/compare/v1.31.2...v1.32.0) (2025-05-27)
+
+
+### Features
+
+* **string:** support html in tokenizer ([733fdf2](https://github.com/dvcol/common-utils/commit/733fdf2b179429cc9ec4666576f9e2cb0bebe3a4))
+
 ### [1.31.2](https://github.com/dvcol/common-utils/compare/v1.31.1...v1.31.2) (2025-05-21)
 
 
