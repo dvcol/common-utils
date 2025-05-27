@@ -122,16 +122,36 @@ export const toKebabCase = (str: string) =>
     .replace(/^-/, '')
     .toLowerCase();
 
-export type MarkAndToken = { mark: string | false; token: string };
-export type MarkTokenizer = (str?: string, pattern?: string, flags?: string) => MarkAndToken[];
-export const markTokenizer: MarkTokenizer = (str = '', pattern, flags = 'gi') => {
-  if (!pattern?.trim()) return [{ mark: false, token: str }];
-  // Case-insensitive with capturing
-  const _regex = new RegExp(`(${pattern.trim()})`, flags);
-  const result: MarkAndToken[] = [];
+export type MarkAndToken = {
+  /**
+   * The matched mark or pattern.
+   */
+  mark: string | false;
+  /**
+   * The token or text before the mark.
+   */
+  token: string;
+};
+export type MarkTokenizerOptions = {
+  /**
+   * Optional flags for the regex.
+   *
+   * @default 'gi'
+   **/
+  flags?: string;
+  /**
+   * If true, the tokenizer will ignore HTML tags and only tokenize text content.
+   *
+   * @default false
+   */
+  html?: boolean;
+};
+export type MarkTokenizer = (str?: string, pattern?: string, options?: MarkTokenizerOptions) => MarkAndToken[];
 
+function tokenizeString(str: string, pattern: RegExp) {
+  const result: MarkAndToken[] = [];
   let lastIndex = 0;
-  str.replace(_regex, (match, group, offset) => {
+  str.replace(pattern, (match, group, offset) => {
     // If no group, ignore result
     if (!group) return '';
     // Push the text before + match
@@ -142,5 +162,29 @@ export const markTokenizer: MarkTokenizer = (str = '', pattern, flags = 'gi') =>
   });
   // Push the remaining text
   result.push({ mark: false, token: str.slice(lastIndex) });
+  return result;
+}
+
+export const markTokenizer: MarkTokenizer = (str = '', pattern, { flags = 'gi', html = false } = {}) => {
+  if (!pattern?.trim()) return [{ mark: false, token: str }];
+
+  const _regex = new RegExp(`(${pattern.trim()})`, flags);
+
+  if (!html) return tokenizeString(str, _regex);
+
+  const result: MarkAndToken[] = [];
+
+  // This splits on HTML tags while keeping them in the array
+  const parts = str.split(/(<[^>]+>)/g);
+
+  parts.forEach(part => {
+    if (part.startsWith('<') && part.endsWith('>')) {
+      // It's a tag — don't tokenize
+      result.push({ mark: false, token: part });
+    } else {
+      result.push(...tokenizeString(part, _regex));
+    }
+  });
+
   return result;
 };
