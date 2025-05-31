@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.33.0](https://github.com/dvcol/common-utils/compare/v1.32.0...v1.33.0) (2025-05-31)
+
+
+### Features
+
+* **date:** adds since & ago utility functions ([246c1a4](https://github.com/dvcol/common-utils/commit/246c1a4d30805debf780c1f04d2d1b7408862be4))
+
 ## [1.32.0](https://github.com/dvcol/common-utils/compare/v1.31.2...v1.32.0) (2025-05-27)
 
 
