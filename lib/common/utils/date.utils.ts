@@ -96,3 +96,37 @@ export const dayOfTheWeek = (date: Date | string | number) => {
 };
 
 export const getTodayISOLocal = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60 * 1000).toISOString();
+
+export type TimeSinceUnit = 'years' | 'months' | 'days' | 'hours' | 'minutes' | 'seconds';
+
+export type TimeSinceResult = Record<TimeSinceUnit, number>;
+
+export function timeSince(date: Date | number | string): TimeSinceResult {
+  const now = new Date();
+  const past = new Date(date);
+  const diffMs = now.getTime() - past.getTime();
+
+  const seconds = Math.floor(diffMs / 1000);
+  const minutes = Math.floor(diffMs / (1000 * 60));
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const months = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 30)); // approx month
+  const years = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 365)); // approx year
+
+  return { seconds, minutes, hours, days, months, years };
+}
+
+/**
+ * Format a date to a human-readable string indicating how long ago it was
+ * @param date - The date to format, can be a Date object, timestamp, or ISO string
+ * @param units - Supported units for time difference, in order of preference
+ */
+export function timeAgo(date: Date | number | string, units: TimeSinceUnit[] = ['years', 'months', 'days', 'hours', 'minutes', 'seconds']): string {
+  const diff = timeSince(date);
+
+  const found = units.find(u => diff[u] > 0);
+  if (!found) return 'now';
+
+  const value = diff[found];
+  return `${value} ${found}${value > 1 ? 's' : ''} ago`;
+}
