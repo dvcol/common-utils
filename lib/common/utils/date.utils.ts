@@ -119,14 +119,26 @@ export function timeSince(date: Date | number | string): TimeSinceResult {
 /**
  * Format a date to a human-readable string indicating how long ago it was
  * @param date - The date to format, can be a Date object, timestamp, or ISO string
+ * @param short - If true, returns a shorter format (e.g., "2h" instead of "2 hours")
  * @param units - Supported units for time difference, in order of preference
  */
-export function timeAgo(date: Date | number | string, units: TimeSinceUnit[] = ['years', 'months', 'days', 'hours', 'minutes', 'seconds']): string {
+export function timeAgo(
+  date: Date | number | string,
+  {
+    short = false,
+    units = ['years', 'months', 'days', 'hours', 'minutes', 'seconds'],
+  }: {
+    short?: boolean;
+    units?: TimeSinceUnit[];
+  } = {},
+): string {
   const diff = timeSince(date);
 
   const found = units.find(u => diff[u] > 0);
   if (!found) return 'now';
 
   const value = diff[found];
-  return `${value} ${found}${value > 1 ? 's' : ''} ago`;
+  if (short) return `${value}${found.slice(0, 1)}`;
+  const unit = found.slice(0, -1); // remove 's' for singular form and re-add below if needed
+  return `${value} ${unit}${value > 1 ? 's' : ''} ago`;
 }
