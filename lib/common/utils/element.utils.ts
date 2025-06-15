@@ -36,6 +36,15 @@ export const getFocusableElements = (
   return Array.from(elements).sort((a, b) => (a.tabIndex || 0) - (b.tabIndex || 0));
 };
 
+export const getLastFocusableElement = (
+  element?: Element | null,
+  targets: string[] | readonly string[] = tabFocusableElementSelectors,
+): HTMLElement | null | undefined => {
+  const elements = getFocusableElements(element, targets);
+  if (!elements || !elements.length) return;
+  return elements[elements.length - 1];
+};
+
 export const clickableTags = new Set(['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'LABEL', 'SUMMARY', 'OPTION', 'DETAILS', 'VIDEO', 'AUDIO']);
 
 export const isClickable = (element: Element) => {
