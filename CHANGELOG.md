@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.34.0](https://github.com/dvcol/common-utils/compare/v1.33.0...v1.34.0) (2025-06-15)
+
+
+### Features
+
+* **date:** adds short mode ([d18580f](https://github.com/dvcol/common-utils/commit/d18580f8bd8226aab4a2a4118df281d67dc24274))
+* **element:** adds last focusable ([f0fd19e](https://github.com/dvcol/common-utils/commit/f0fd19ee2ef214edc83b0e1803df3eb54d06be4a))
+
 ## [1.33.0](https://github.com/dvcol/common-utils/compare/v1.32.0...v1.33.0) (2025-05-31)
 
 
